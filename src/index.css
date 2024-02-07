@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "GE SS Two Bold";
+  src: local("GE SS Two Bold"), url(./fonts/GE_SS_Two_Bold.otf) format("otf");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+@font-face {
+  font-family: "GE SS Two Light";
+  src: local("MyFont-Light"), url(./fonts/GE_SS_Two_Light-1.otf) format("otf");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+@font-face {
+  font-family: "GE SS Two Medium";
+  src: local("GE SS Two Medium"), url(./fonts/GE_SS_Two_Medium.otf) format("otf");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+body{
+  font-family: "GE SS Two Medium" ;
+  font-size: 200 !important;
+  color:#001B79;
+
+}
+
+.font-light{
+  font-family: "GE SS Two Light" !important;
+}
+

@@ -1,0 +1,243 @@
+
+
+ 
+ @media (max-width: 1200px) {
+    html {
+       font-size: 90%;
+    }
+ }
+ 
+ @media (max-width: 992px) {
+    html {
+       font-size: 85%;
+    }
+ }
+ 
+ @media (max-width: 768px) {
+    html {
+       font-size: 80%;
+    }
+ }
+ 
+ @media (max-width: 576px) {
+    html {
+       font-size: 75%;
+    }
+ }
+ 
+ .NewChat {
+    /* padding-top: 3rem; */
+ }
+ /* .NewChat .NewChatContainer .side-bar {
+    background-color: #000000;
+    padding-top: 3rem;
+    height: 100vh;
+    position: fixed;
+ }
+ .NewChat .NewChatContainer .side-bar .img-conteiner {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+ } */
+ .NewChat .NewChatContainer .chat-option {
+    border-radius: 0.625rem;
+    border: 1px solid #000000;
+    padding: 0.5rem;
+    margin-top: 8rem;
+ }
+ .NewChat .NewChatContainer .chat-option button {
+    width: 90%;
+ 
+    font-size: 0.875rem;
+    background-color: transparent;
+    color: #001b79;
+    font-weight: 500;
+    line-height: 1.5rem; /* 171.429% */
+    padding: 1rem 1rem;
+    border-radius: 0.625rem;
+    transition: all 0.4s;
+    border: none;
+    text-align: center;
+ }
+ 
+ .NewChat .NewChatContainer .chat-option button:hover {
+    background: rgba(201, 201, 201, 0.2);
+ }
+ .NewChat .NewChatContainer .chat-option button img {
+    width: 10%;
+    margin-left: 0.63rem;
+    margin-right: 0.63rem;
+ }
+ .NewChat .NewChatContainer .chat-heading {
+    margin-top: 5rem;
+ }
+ .NewChat .NewChatContainer .chat-heading h3 {
+    color: #001b79;
+    text-align: center;
+    font-family: Arabic;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 109.091% */
+ }
+ .NewChat .NewChatContainer .chat-details {
+ }
+ .NewChat .NewChatContainer .chat-details .item-container {
+    /* border: 1px solid #001b79; */
+    /* border-radius: 0.75rem; */
+    box-shadow: 20px 20px 80px 0px rgba(0, 27, 121, 0.05);
+ }
+ .NewChat .NewChatContainer .chat-details .item {
+    border: 1px solid #000;
+    border-radius: 0.3125rem;
+    padding: 1.2rem 2.5rem;
+ }
+ .NewChat .NewChatContainer .chat-details .item h5 {
+    color: #001b79;
+    text-align: right;
+    font-family: Montserrat-Arabic;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 133.333% */
+ }
+ .NewChat .NewChatContainer .chat-details .item p {
+    color: #001b79;
+    text-align: right;
+    font-family: Montserrat-Arabic;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 200% */
+ }
+ .NewChat .NewChatContainer .input input {
+    border-radius: 0.75rem;
+    border: 0.1px solid #001a7986;
+    padding: 1rem 8rem;
+  text-align: end;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 171.429% */
+    color: #001b79;
+ }
+ a{
+   text-decoration: none;
+   color: #001b79;
+
+ }
+ a:hover{
+   text-decoration: none;
+   color: #001b79;
+background-color:rgb(243, 243, 243);
+ }
+ .text-Light{
+   font-family: 'GE SS Two Light' !important;
+ }
+ .border-col{
+border: 1px solid #001a7916 ;
+margin: 9px;
+ }
+ .NewChat .NewChatContainer input {
+
+ 
+    line-height: 1.5rem; /* 171.429% */
+    color: #001b79;
+ }
+ .NewChat .NewChatContainer .input {
+    position: relative;
+ }
+ .NewChat .NewChatContainer .input .overlay1,
+ .NewChat .NewChatContainer .input .overlay2 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+ }
+ .NewChat .NewChatContainer .input .overlay2 {
+    right: 3rem;
+ }
+ .NewChat .NewChatContainer .input .overlay1 {
+    left: 1rem;
+ }
+ 
+ .NewChat .NewChatContainer .input .overlay1 .rise {
+    background-color: #001b79;
+    padding: 0.6rem;
+    border-radius: 0.3125rem;
+ }
+ .NewChat .NewChatContainer .input .overlay2 img,
+ .NewChat .NewChatContainer .input .overlay1 img {
+    width: 2.8rem;
+ }
+ .NewChat .NewChatContainer .input .overlay2 .plus,
+ .NewChat .NewChatContainer .input .overlay2 .micro {
+   
+    padding: 0.6rem;
+ }
+ .NewChat .NewChatContainer .input .overlay2 .btn-check:checked + .btn,
+ .btn.active,
+ .btn.show,
+ .btn:first-child:active,
+ :not(.btn-check) + .btn:active {
+    background-color: transparent;
+    border: none;
+ }
+ .NewChat .NewChatContainer .input .overlay2 .dropdown-toggle::after {
+    display: none;
+ }
+ .NewChat .NewChatContainer .input .overlay2 .btn {
+    border: none;
+ }
+ .NewChat .NewChatContainer .input .overlay2 .attatch-img {
+    width: 60%;
+ }
+ .NewChat .NewChatContainer .input .overlay2 .dropdown-menu {
+    padding: 1rem 0.3rem 0.4rem 4rem;
+ }
+ .NewChat .NewChatContainer .input .overlay2 .show {
+    inset: auto auto 0 -3rem !important;
+ }
+ .NewChat .NewChatContainer .input .overlay2 .dropdown-item {
+    color: #001b79;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.5rem; /* 150% */
+ }
+ @media screen and (max-width: 1024px) {
+    .NewChat .NewChatContainer .chat-option {
+       width: 75% !important;
+    }
+ }
+ @media screen and (max-width: 776px) {
+    .NewChat .NewChatContainer .chat-option {
+       width: 85% !important;
+    }
+ }
+ @media screen and (max-width: 575px) {
+    .NewChat .NewChatContainer .item-container {
+       width: 100% !important;
+    }
+ }
+ @media screen and (max-width: 375px) {
+    .NewChat .NewChatContainer .chat-option {
+       width: 95% !important;
+    }
+ }
+ .blue-dark{
+  
+   color: white  !important;
+   background-repeat: no-repeat;
+   background-size: cover;
+   width: 30px;
+   height: 30px;
+   background-image: url('../../assets/Images/bxs_plus-circle.png') !important;
+   
+ }
+ .sidebar-height{
+   height: 800px !important;
+ }
