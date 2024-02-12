@@ -15,7 +15,7 @@ export default function SelectChat() {
   return (
     <div>
 
-      <FormControl sx={{ m: 1, minWidth: 120 , borderRadius:"500px" ,color:"blue"}}>
+      <FormControl sx={{ m: 2, minWidth: 120 , borderRadius:"500px" ,color:"blue"}}>
         <Select
           value={age}
           onChange={handleChange}
