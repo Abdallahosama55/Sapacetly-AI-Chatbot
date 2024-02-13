@@ -1,0 +1,378 @@
+.Control {
+   background-color: #f0f4f9;
+}
+.Control img {
+   width: 100%;
+}
+.Control .nav-c {
+   padding: 1rem 0;
+}
+.Control .containerC {
+   width: 90%;
+   margin: auto;
+}
+.Control .blue {
+   color: #001b79;
+}
+.Control .pink {
+   color: var(--secnd, #ed5ab3);
+}
+.Control .font-family-normal {
+   font-family: "GE SS Two";
+}
+.Control .font-family-fix {
+   font-family: Montserrat-Arabic;
+}
+
+.Control .nav-c .search-con input {
+   border-radius: 3.125rem;
+   padding: 1rem 2rem;
+   background: #fff;
+   box-shadow: 5px 5px 50px 0px rgba(0, 0, 0, 0.1);
+   color: #001b79;
+   /* text-align: center; */
+   font-family: "GE SS Two";
+   font-size: 0.875rem;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 1.5rem; /* 171.429% */
+}
+.Control .nav-c .img {
+   /* padding: 0.5rem; */
+   text-align: center;
+}
+.Control .nav-c .overlay .a_sidebar {
+   font-size: 0.75rem;
+}
+.Control .nav-c .item {
+   background-color: #f0f4f9;
+   border-radius: 2rem;
+   height: 100%;
+}
+.Control .nav-c .setting-nav {
+   background-color: #fff;
+   position: relative;
+}
+.Control .nav-c .setting-nav .overlay {
+   position: absolute;
+   top: 4rem;
+   background-color: #fff;
+   left: 1rem;
+}
+.Control .nav-c .setting-nav .overlay {
+   font-size: 0.75rem;
+}
+.Control .nav-c .bg-img-fix {
+   background-color: transparent;
+}
+
+/* CardStyles.css */
+.Control .welcome {
+   background-color: #fff;
+   border-radius: 3.125rem;
+   box-shadow: 5px 5px 50px 0px rgba(0, 0, 0, 0.1);
+}
+.Control .welcome h2 {
+   color: var(--primary, #001b79);
+   /* text-align: center; */
+   /* font-family: "GE SS Two"; */
+   font-size: 2.1875rem;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 1.5rem; /* 68.571% */
+}
+.Control .welcome .welcome-p {
+   color: var(--primary, #001b79);
+   /* text-align: center; */
+   font-family: "GE SS Two";
+   font-size: 1.125rem;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 1.5rem; /* 133.333% */
+   opacity: 0.3;
+}
+.Control .welcome .bottom-arrow {
+   margin-top: 7rem;
+}
+.Control .welcome .img24 .bottom-arrow {
+   margin-top: 7.7rem;
+}
+.Control .welcome .img55 .bottom-arrow {
+   margin-top: 6.7rem;
+}
+.Control .welcome .bottom-arrow .para {
+   color: #001b79;
+   font-family: Montserrat-Arabic;
+   font-size: 4.0625rem;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 2.25rem; /* 55.385% */
+}
+.Control .welcome .bottom-arrow .arrow-welcome {
+   background-color: #000;
+   border-radius: 10rem;
+
+}
+.Control .welcome .card-arrow {
+}
+.Control .welcome .img55 {
+   background-image: url("../../assets/Images/Vector 911.jpg");
+   background-size:cover;
+   background-repeat: no-repeat;
+}
+.Control .welcome .img12 {
+   background-image: url("../../assets/Images/Vector 912.svg");
+  
+   background-size:cover;
+   background-repeat: no-repeat;
+}
+.Control .welcome .img24 {
+   background-image: url("../../assets/Images/Vector 913.jpg");
+  
+   background-size:cover;
+   background-repeat: no-repeat;
+}
+.Control .welcome .img08 {
+   background-image: url("../../assets/Images/Vector 914.svg");
+   background-size:cover;
+   background-repeat: no-repeat;
+}
+.Control .welcome .img55 p,
+.Control .welcome .img08 p,
+.Control .welcome .img24 p,
+.Control .welcome .img12 p {
+   color: var(--primary, #001b79);
+   /* text-align: justify; */
+   /* font-family: "GE SS Two"; */
+   font-size: 0.875rem;
+   font-style: normal;
+   font-weight: 300;
+   line-height: 1.5625rem; /* 178.571% */
+}
+.Control .welcome .img55 h4,
+.Control .welcome .img08 h4,
+.Control .welcome .img24 h4,
+.Control .welcome .img12 h4 {
+   color: var(--primary, #001b79);
+   /* text-align: center; */
+   /* font-family: "GE SS Two"; */
+   font-size: 1.25rem;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 1.5rem; /* 120% */
+}
+.Control .welcome .img55,
+.Control .welcome .img08,
+.Control .welcome .img24,
+.Control .welcome .img12 {
+   /* min-height: 24rem; */
+}
+.Control .charts .chart1 {
+   background-color: #fff;
+   border-radius: 3.125rem;
+}
+/* Additional styles for specific elements in the card can be added here */
+
+/*  */
+
+.Control .control-table .table-con {
+   background-color: #fff;
+   border-radius: 3rem;
+}
+.Control .control-table .table-con .table-head h5 {
+   color: var(--primary, #001b79);
+   /* text-align: center; */
+   /* font-family: "GE SS Two"; */
+   font-size: 1rem;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 1.5rem; /* 150% */
+}
+.Control .control-table .table-con .table-head p {
+   color: var(--primary, #001b79);
+   text-align: right;
+   /* font-family: "GE SS Two"; */
+   font-size: 1rem;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 1.5rem; /* 150% */
+}
+.Control .control-table .table-con .table-head .select-num-show {
+   width: 8%;
+}
+.Control .control-table .table-con .table-head .form-select {
+   background-position: left 0.75rem center;
+   padding: 0.375rem 0.75rem;
+   border: 1px solid #001b79;
+}
+.Control .control-table .table-head .search-input {
+   background-image: url("../../assets/Images/search-opasity-low.svg");
+   background-position: right 0.75rem center;
+   width: 30%;
+   background-repeat: no-repeat;
+   /* background:; */
+   padding: 0.375rem 2.75rem 0.375rem 2.75rem;
+   /* opacity: 0.3; */
+   border: 1px solid #001b79;
+}
+.Control .control-table .table-con .table-head .form-control::placeholder {
+   opacity: 0.3 !important;
+}
+
+
+
+/* Media query for large screens */
+@media only screen and (min-width: 1200px) {
+.Control .welcome .bottom-arrow .arrow-welcome {
+   background-color: #000;
+   border-radius: 10rem;
+
+width: 3.7rem !important;
+
+}
+   .Control .welcome .img55 {
+      background-image: url("../../assets/Images/Vector 911.jpg");
+      background-size:contain;
+      background-repeat: no-repeat;
+   }
+   .Control .welcome .img12 {
+      background-image: url("../../assets/Images/Vector 912.svg");
+     
+      background-size:contain;
+      background-repeat: no-repeat;
+   }
+   .Control .welcome .img24 {
+      background-image: url("../../assets/Images/Vector 913.jpg");
+     
+      background-size:contain;
+      background-repeat: no-repeat;
+   }
+   .Control .welcome .img08 {
+      background-image: url("../../assets/Images/Vector 914.svg");
+      background-size:contain;
+      background-repeat: no-repeat;
+   }
+ 
+}
+
+/* Media query for medium-sized screens */
+@media only screen and (max-width: 1199px) {
+   .Control .welcome .img55 {
+      background-image: url("../../assets/Images/Vector 911.jpg");
+      background-size:contain;
+      background-repeat: no-repeat;
+   }
+   .Control .welcome .img12 {
+      background-image: url("../../assets/Images/Vector 912.svg");
+     
+      background-size:contain;
+      background-repeat: no-repeat;
+   }
+   .Control .welcome .img24 {
+      background-image: url("../../assets/Images/Vector 913.jpg");
+     
+      background-size:contain;
+      background-repeat: no-repeat;
+   }
+   .Control .welcome .img08 {
+      background-image: url("../../assets/Images/Vector 914.svg");
+      background-size:contain;
+      background-repeat: no-repeat;
+   }
+ 
+}
+
+/* 1800px and above */
+@media only screen and (min-width: 1800px) {
+   /* Your styles for screens 1800px and above go here */
+   .Control .welcome .bottom-arrow {
+      margin-top: 7rem  !important;
+   }
+   .Control .welcome .img24 .bottom-arrow {
+      margin-top: 7.7rem  !important;
+   }
+   .Control .welcome .img55 .bottom-arrow {
+      margin-top: 6.7rem  !important;
+   }
+}
+
+/* 1700px to 1800px */
+@media only screen and (max-width: 1799px) and (min-width: 1700px) {
+   /* Your styles for screens between 1700px and 1799px go here */
+   .Control .welcome .bottom-arrow {
+      margin-top: 5rem  !important;
+   }
+   .Control .welcome .img12 .bottom-arrow {
+      margin-top: 7rem  !important; 
+   }
+   .Control .welcome .img24 .bottom-arrow {
+      margin-top: 5.7rem  !important;
+   }
+   .Control .welcome .img55 .bottom-arrow {
+      margin-top: 4.7rem  !important;
+   }
+}
+
+/* 1600px to 1700px */
+@media only screen and (max-width: 1699px) and (min-width: 1600px) {
+   /* Your styles for screens between 1600px and 1699px go here */
+   .Control .welcome .bottom-arrow {
+      margin-top: 3rem !important;
+
+   }
+   .Control .welcome .img24 .bottom-arrow {
+      margin-top: 3.7rem  !important;
+
+   }
+   .Control .welcome .img55 .bottom-arrow {
+      margin-top: 2.7rem;
+ 
+   }
+}
+@media only screen and (max-width: 1599px) {
+   .Control .welcome .bottom-arrow {
+      margin-top: 0rem;
+   }
+   .Control .welcome .img24 .bottom-arrow {
+      margin-top: 0rem;
+   }
+   .Control .welcome .img55 .bottom-arrow {
+      margin-top: 0rem;
+   }
+}
+@media only screen and (max-width: 850px) {
+   .Control .welcome .img55 {
+      background-image: url("../../assets/Images/Vector 911.jpg");
+      background-size: cover;
+
+      border-radius: 3.1rem;
+      background-repeat: no-repeat;
+   }
+   .Control .welcome .img12 {
+      background-image: url("../../assets/Images/Vector 912.svg");
+      background-size: cover;
+  
+      border-radius: 3.1rem;
+      background-repeat: no-repeat;
+   }
+   .Control .welcome .img24 {
+      background-image: url("../../assets/Images/Vector 913.jpg");
+      background-size: cover;
+  
+      border-radius: 3.1rem;
+      background-repeat: no-repeat;
+   }
+   .Control .welcome .img08 {
+      background-image: url("../../assets/Images/Vector 914.svg");
+      background-size: cover;
+  
+      border-radius: 3.1rem;
+      background-repeat: no-repeat;
+   }
+   .Control .welcome .arrow-welcome {
+      /* width: 22% !important; */
+   }
+}
+/* ... repeat for each 100px interval */
+
+/* 1100px to 1200px */
