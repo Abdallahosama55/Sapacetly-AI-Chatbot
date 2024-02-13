@@ -147,11 +147,7 @@ a:hover {
   align-items: center !important;
   cursor: pointer;
 }
-<<<<<<< HEAD
  .NewChat .NewChatContainer .input .overlay2 {
-=======
-.NewChat .NewChatContainer .input .overlay2 {
->>>>>>> b6c0d273055ee993ce397fb4af80073586bb0a53
   right: 5rem;
 }
 .NewChat .NewChatContainer .input .overlay1 {

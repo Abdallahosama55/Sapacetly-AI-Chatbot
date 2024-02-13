@@ -6,10 +6,7 @@ import SignUp from "./components/Auth/SignUp/SignUp";
 import SignIn from "./components/Auth/SignIn/SignIn";
 import ChatRoutesPages from "./pages/ChatRoutes/ChatRoutesPages";
 import WriteArticle from "./pages/WriteArticle/WriteArticle";
-<<<<<<< HEAD
 import Control from "./pages/ControlPanal/Control";
-=======
->>>>>>> b6c0d273055ee993ce397fb4af80073586bb0a53
 import ForgotPassword from "./components/Auth/ForgotPassword/ForgotPassword";
 import VerifyAccount from "./components/Auth/VerifyAccount/VerifyAccount";
 import NewPassword from "./components/Auth/NewPassword/NewPassword";
@@ -27,11 +24,8 @@ function App() {
             path="/edit"
             element={<Edit />}
           />
-<<<<<<< HEAD
           
 
-=======
->>>>>>> b6c0d273055ee993ce397fb4af80073586bb0a53
           <Route
             path="/editor"
             element={<Editor />}
@@ -58,14 +52,11 @@ function App() {
           />
 
           <Route
-<<<<<<< HEAD
           path="/control"
           element={<Control />}
         />
 
           <Route
-=======
->>>>>>> b6c0d273055ee993ce397fb4af80073586bb0a53
             path="/ChatRoutes"
             element={<ChatRoutesPages />}
           />
