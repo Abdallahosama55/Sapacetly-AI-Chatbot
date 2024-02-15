@@ -3,16 +3,17 @@ import './barChart.css';
 
 import { PieChart } from '@mui/x-charts/PieChart';
 import { useDrawingArea } from '@mui/x-charts/hooks';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles'; // Import createTheme and ThemeProvider
+import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { red } from '@material-ui/core/colors';
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'GE SS Two, GE SS Two', // Set your desired font family here
+    fontFamily: 'GE SS Two, GE SS Two',
   },
 });
 
 const StyledText = styled('text')(({ theme }) => ({
-  fill: theme.palette.text.primary,
+
   textAnchor: 'middle',
   dominantBaseline: 'central',
   fontSize: 20,
@@ -29,36 +30,44 @@ function PieCenterLabel({ children }) {
 
 export default function BarChart() {
   const data = [
-    { value: 5, label: 'صور' },
+    { value: 20, label: 'صور' },
     { value: 10, label: 'شات' },
     { value: 15, label: 'تدقيق' },
-    { value: 20, label: 'مقالات' },
+    { value: 5, label: 'مقالات' },
   ];
 
   const size = {
-    width: 400,
+    width: 100,
     height: 200,
   };
 
+  const palette = ['#001B79', '#ED5AB3', 'rgba(5, 255, 0, 1)',' rgba(0, 0, 0, 0.08)'];
+
+
   return (
-    <ThemeProvider theme={theme}> {/* Wrap your component with ThemeProvider and pass the theme */}
-      <div className='bar-c h-100'>
+    <ThemeProvider theme={theme}>
+      <div className='bar-c shadow  rounded-4 h-100'>
         <h3>الاستخدام</h3>
         <p>الاشتراك: تجريبي</p>
         <div className='d-flex align-items-center justify-content-center position-relative'>
           <PieChart
-            series={[{
-              data,
-              innerRadius: 80,
-              startAngle: -110,
-              endAngle: 110,
-              paddingAngle: 5,
-              innerRadius: 60,
-              outerRadius: 80,
-            }]}
+          colors={palette}
+            series={[
+              {
+                data,
+                startAngle: -90,
+                endAngle: 90,
+                paddingAngle: 1,
+                innerRadius: 90,
+                outerRadius: 80,
+             
+              },
+            ]}
             {...size}
           >
+         
             <PieCenterLabel>75%</PieCenterLabel>
+            
           </PieChart>
         </div>
 

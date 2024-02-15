@@ -1,6 +1,9 @@
 body{
-  height: 100vh;
-  background-color:#F0F4F9 !important
+  height: 100vh !important;
+  background-color:#ffffff !important;
+  overflow-x: hidden !important;
+
+  
 }
 .btn-pink{
   background-color: #ED5AB3;

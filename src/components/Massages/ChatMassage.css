@@ -3,8 +3,8 @@
   max-width:700px !important;
 }
 .chat-height {
-  min-height: 580px !important;
-  max-height: 580px !important;
+  min-height: 520px !important;
+  max-height: 520px !important;
 }
 
 .example::-webkit-scrollbar {

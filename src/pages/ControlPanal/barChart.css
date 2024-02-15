@@ -42,13 +42,13 @@
     width: 100% !important;
 }
 .bar-c .MuiChartsLegend-root.MuiChartsLegend-column.css-1u0lry5-MuiChartsLegend-root{
-/* display: none; */
+display: none;
 }
-@media screen and (max-width:1600px) {
+ @media screen and (max-width:1600px) {
     .bar-c .MuiChartsLegend-root.MuiChartsLegend-column.css-1u0lry5-MuiChartsLegend-root{
         display: none;
         }
-}
+} 
 
 
 .center-label {

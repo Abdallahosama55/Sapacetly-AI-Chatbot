@@ -13,17 +13,20 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Satellite } from "@mui/icons-material";
 
-function ChatRoutes() {
+function ChatRoutes({ chats, setChats, showChat, setShowChat }) {
   const navigate = useNavigate();
-  const [chats, setChats] = useState([
-    { id: 1, content: "content1" },
-    { id: 2, content: "content2" },
-    { id: 3, content: "content3" },
-    { id: 4, content: "content4" },
-  ]);
-  const [showChat, setShowChat] = useState(0);
+  console.log(chats);
+  // const [chats, setChats] = useState([
+  //   { id: 1, content: "content1" },
+  //   { id: 2, content: "content2" },
+  //   { id: 3, content: "content3" },
+  //   { id: 4, content: "content4" },
+  // ]);
+  // const [showChat, setShowChat] = useState(0);
 
   const { collapseSidebar, rtl } = useProSidebar();
+
+  //Adding new chat
   function newChat() {
     const newChatId = chats.length > 0 ? chats[chats.length - 1].id + 1 : 1;
     const newChat = { id: newChatId };
@@ -38,14 +41,11 @@ function ChatRoutes() {
   }
 
   return (
-    <div
-      style={
-        ({ height: "80vh" }, { display: "flex", flexDirection: "row-reverse" })
-      }>
-      <div className=" rounded-4 mt-3  shadow mb-3 bg-white">
+    <div style={{ display: "flex", flexDirection: "row-reverse" }}>
+      {/* <div className=" rounded-4  shadow  bg-white">
         <Sidebar
           rtl={true}
-          style={{ height: "85vh", backgroundColor: "white" }}
+          style={{ height: "100vh", backgroundColor: "white" }}
           className=" rounded-4">
           <Menu>
             <MenuItem
@@ -86,16 +86,15 @@ function ChatRoutes() {
             ))}
           </Menu>
         </Sidebar>
-      </div>
+      </div> */}
 
       <div style={{ flex: 1 }}>
-        <div className=" rounded-4 shadow  bg-white m-3">
-          {chats.map(
-            
+        <div className=" rounded-4  bg-white ">
+          {chats?.map(
             (chat) =>
               chat.id === showChat && <StartChat content={chat.content} />
           )}
-          {chats.length === 0 && <StartChat />}
+          {chats?.length === 0 && <StartChat />}
           {showChat === 0 && <StartChat />}
           {/* <StartChat /> */}
         </div>

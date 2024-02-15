@@ -32,30 +32,31 @@ export default function Control() {
       
          <div className="container-fluid p-0 m-0" >
             <div className="d-flex p-0 m-0">
-               <div className="col-lg-12 col-xl-10 ar p-0 col-md-12 col-sm-12 col-12 ">
+               <div className="w-100 mt-5 ">
                   <div className="containerC" >
                    
-                     <div className="welcome p-4"  dir="rtl" >
-                        <h2>مرحبا جواد</h2><p className="welcome-p mt-4">مجموعة الأدوات الأكثر تطورًا في مجال الذكاء الاصطناعي متوفرة هنا</p>
+                     <div className="welcome shadow rounded-4  p-4"  dir="rtl" >
+                        <h3 className=" font-bold fw-bolder ">مرحبا مصطفى</h3><p className="welcome-p mt-2">مجموعة الأدوات الأكثر تطورًا في مجال الذكاء الاصطناعي متوفرة هنا</p>
                         <div className="row justify-content-between">
                            {cardData.map(item => {
                               return (
                                  <div className="p-3 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 " >
-                                    <div className={`img${item.number} p-5 px-3 d-flex flex-column justify-content-between`} key={item.id}>
+                                    <div className={`img${item.number}   p-5 px-3 d-flex flex-column justify-content-between`} key={item.id}>
                                        <div className="">
-                                          <h4>{item.title}</h4><ShowMoreText
+                                          <h4>{item.title}</h4>
+                                          <ShowMoreText
                                              lines={4} // Number of lines to display initially
                                              more="Show More"
-                                             className=""
+                                             className=" font-light p-welcome-text"
                                              less="Show Less"
                                              anchorClass="more-btn"
                                              expanded={false}
                                           >
-                                             {item.text}
+                                          <p className=" font-light p-welcome-text"> {item.text}</p>  
                                           </ShowMoreText></div>
-                                       <div className="d-flex justify-content-between bottom-arrow">
+                                       <div className="d-flex justify-content-between bottom-arrow position-relative">
                                           <p className="num fs-1"></p>
-                                          <div className="arrow-welcome ">
+                                          <div className="arrow-welcome position-absolute  ">
                                              <LazyLoadImage src={arrow_small_right} />
                                           </div>
                                        </div>
@@ -76,17 +77,17 @@ export default function Control() {
                            </div>
                         </div>
                      </div>
-                     <div className="control-table mt-5 " dir="rtl" >
+                     <div className="control-table mt-5  shadow-lg  rounded-4 " dir="rtl" >
                         <div className="table-con p-4">
                            <div className="table-head">
                               <h5><LazyLoadImage src={product} alt='icon' effect='blur' opasity='0.5' className='' /> أخر الانشطة</h5>
                               <p>عرض</p>
-                              <select className="form-select select-num-show rounded-5 d-inline-block" >
+                              <select className="form-select select-num-show rounded-3 d-inline-block" >
                                  <option selected value='20'>20</option>
                                  <option value="10">10</option>
 
                               </select>
-                              <input type="text" className="form-controld-inline-block me-3 rounded-5 search-input" placeholder="بحث" />
+                              <input type="text" className="form-controld-inline-block me-3 rounded-3 search-input" placeholder="بحث" />
                            </div>
                            <div className="">
                               <TableC />

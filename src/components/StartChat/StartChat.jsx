@@ -90,8 +90,8 @@ export default function StartChat({ content }) {
   const fileInputRef = useRef(null);
 
   return (
-    <div className="row m-0 ps-4 pe-4 justify-content-center align-items-center ar pb-5">
-      <div className="col-12">
+    <div className="row m-0 ps-md-4 pe-md-4 justify-content-center align-items-center ar pb-1 ">
+      <div className="col-12 mt-3">
         <SelectChat />
       </div>
       <section style={{ maxWidth: "1200px" }} className="NewChat col-lg-12 col-xl-12 col-md-12 p-0 justify-content-center">
@@ -99,41 +99,63 @@ export default function StartChat({ content }) {
           {formSubmitted || content ? (
             <ChatMassage />
           ) : (
+            <div className=" ">
+
             <PopularStartchat items={items} handleClick={handleClick} />
-          )}
-          <form onSubmit={handleSubmit}>
-            <div className="input mt-2 text-center me-auto ms-auto">
-              <TextareaAutosize
-                ref={textareaRef}
-                value={input_NewChat}
-                onChange={handleInput}
-                placeholder="كيف استطيع مساعدتك اليوم؟"
-                className="w-100 d-in overflow-y-auto ar"
-              />
-              <input type="file" style={{ display: "none" }} ref={fileInputRef} onChange={handleFileChange} />
-              <div className="overlay1">
-                <Button type="submit" disabled={!input_NewChat.trim()}>
-                  <LazyLoadImage src={arrow} alt={"hi"} effect="blur" opacity="true" placeholderSrc={arrow} />
-                </Button>
-              </div>
-              <div className="overlay2 d-flex">
-                <Button onClick={handleMenuClick} className="bg-white btn p-0">
-                  <LazyLoadImage src={micro} alt={"hi"} effect="blur" opacity="true" placeholderSrc={micro} className="  plus" />
-                  <LazyLoadImage src={plus} alt={"hi"} effect="blur" opacity="true" placeholderSrc={plus} className="plus" />
-                </Button>
-                <Menu
-                  id="simple-menu"
-                  anchorEl={anchorEl}
-                  open={Boolean(anchorEl)}
-                  onClose={handleMenuClose}
-                >
-                  <MenuItem onClick={() => handleSelect("upload image")}> رفع صورة <FaImage/> </MenuItem>
-                  <MenuItem onClick={() => handleSelect("add link")}>اضافه لينك<FaLink/></MenuItem>
-                  <MenuItem onClick={() => handleSelect("upload file")}>رفع ملف <FaFile/></MenuItem>
-                </Menu>
-              </div>
+            
             </div>
-          </form>
+           
+          )}
+
+          <div className="row justify-content-center">
+   
+          <div className=" col-md-9  ">
+          
+          
+                  
+          <form onSubmit={handleSubmit}>
+          <div className="input  text-center me-auto ms-auto">
+            <TextareaAutosize
+              ref={textareaRef}
+              value={input_NewChat}
+              onChange={handleInput}
+               autoFocus="true"
+              placeholder="كيف استطيع مساعدتك اليوم؟"
+              className="w-100 d-in overflow-y-auto ar"
+            />
+            <input type="file" style={{ display: "none" }} ref={fileInputRef} onChange={handleFileChange} />
+            <div className="overlay1">
+              <Button type="submit" disabled={!input_NewChat.trim()}>
+                <LazyLoadImage src={arrow} alt={"hi"} effect="blur" opacity="true" placeholderSrc={arrow} />
+              </Button>
+            </div>
+            <div className="overlay2 d-flex">
+              <Button onClick={handleMenuClick} >
+                <LazyLoadImage src={micro} alt={"hi"} effect="blur" opacity="true" placeholderSrc={micro} className="   plus" />
+                <LazyLoadImage src={plus} alt={"hi"} effect="blur" opacity="true" placeholderSrc={plus} className="plus" />
+              </Button>
+              <Menu
+                id="simple-menu"
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={handleMenuClose}
+              >
+                <MenuItem onClick={() => handleSelect("upload image")}> رفع صورة <FaImage/> </MenuItem>
+                <MenuItem onClick={() => handleSelect("add link")}>اضافه لينك<FaLink/></MenuItem>
+                <MenuItem onClick={() => handleSelect("upload file")}>رفع ملف <FaFile/></MenuItem>
+              </Menu>
+            </div>
+          </div>
+        </form>
+          
+          
+          
+          
+          </div>
+  
+          
+          </div>
+         
         </div>
       </section>
     </div>

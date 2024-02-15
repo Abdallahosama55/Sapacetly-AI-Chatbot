@@ -71,16 +71,16 @@ function ChatMassage() {
   };
 
   return (
-    <div className="chat-height ar overflow-y-scroll     example px-2 overflow-hidden" style={{ flexDirection: "column-reverse" }} dir="rtl" >
+    <div className="chat-height me-md-5 pe-md-5 ar overflow-y-scroll     example px-2 overflow-hidden" style={{ flexDirection: "column-reverse" }} dir="rtl" >
       {useList.map((userChat, index) => (
         <React.Fragment key={index}>
           {/* User Chat */}
-          <div className="d-flex py-4 ar align-items-center w-100  justify-content-start" dir="rtl">
+          <div className="d-flex py-4 pe-md-5 ar align-items-start w-100  justify-content-start" dir="rtl">
           <div className=" ">
           <img
           src={image1}
             className=" rounded-circle "
-            width={61}
+            width={35}
           />
         </div>
           <div  className=" pe-3">
@@ -98,17 +98,17 @@ function ChatMassage() {
           </div>
 
           {/* Robot Chat */}
-          <div className="d-flex ar justify-content-start align-items-center" dir="rtl">
+          <div className="d-flex  pe-md-5  ar justify-content-start align-items-start" dir="rtl">
           <div className=" ">
           <img
             src={image2}
             className=" rounded-circle "
-            width={61}
+            width={35}
           />
         </div>
             <div className="ar me-3">
               <div>
-                <h5 className="mt-1">{robotList[index].name}</h5>
+                <span className="mt-1">{robotList[index].name}</span>
                 <p className="font-light w-100 ">{robotList[index].content}</p>
                 <div>
 
