@@ -1,4 +1,6 @@
 body{
+  padding: 0px !important;
+  margin: 0px !important;
   height: 100vh !important;
   background-color:#ffffff !important;
   overflow-x: hidden !important;
@@ -11,14 +13,17 @@ color:white;
 border-radius: 10px;
 
 
-width: 226px;
+width: 200px;
 height:48px;
+scale: 0.90;
 
-padding: 27px, 71px, 27px, 71px;
 border-radius: 10px;
 border-style: none;
 
 
+}
+.text-blue-light{
+  font-family: 'GE SS Two light' !important;
 }
 .text-blue{
   color: #001B79;
@@ -28,7 +33,8 @@ border-style: none;
   background-color:#001B79;
   width:226px;
 height:48px;
-padding: 27px, 71px, 27px, 71px;
+scale: 0.90;
+
 border-radius: 10px;
 gap: 10px;
 
@@ -73,14 +79,25 @@ border: 1px solid rgba(237, 90, 179, 0.3);
 
 .border-form-text{
 
-  border: 1px solid rgba(130, 131, 133, 0.3);
+  border: 0.5px solid rgba(130, 131, 133, 0.3);
 
 
-  border-radius: 10px;
+  border-radius: 4px;
 
   opacity: 0.3px;
 
 }
 .height-result{
-  height: 320px;
+  min-height: 37vh;
+}
+.MuiStep-horizontal{
+padding-right: 0px !important;
+padding-left: 0px !important;
+}
+
+.MuiStepLabel-label {
+  font-family: 'GE SS Two light' !important;
+margin: 5px !important;
+color: #001B79 !important;
+
 }

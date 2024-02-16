@@ -52,12 +52,12 @@ function ArticleForm() {
 
   return (
     <div>
-      <Form className='justify-content-center align-items-center m-3'>
+      <Form className='justify-content-center align-items-center pe-5 ps-5'>
         <div className='row align-items-center justify-content-end'>
           <div className='col-12'>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>العنوان الرئيسي</Form.Label>
-              <Form.Control type="text" placeholder="text" className=' bg-light' />
+              <Form.Control type="text"  />
             </Form.Group>
           </div>
 
@@ -66,14 +66,14 @@ function ArticleForm() {
               <Form.Label>العناوين الفرعية</Form.Label>
               <div className='d-flex align-items-center'>
                 <span className='fw-bolder ms-1 text-blue'> # </span>
-                <Form.Control type="text" className='bg-light' />
+                <Form.Control type="text"  />
               </div>
             </Form.Group>
           </div>
 
           <div className='col p-0 ps-1 mt-1'>
             <Form.Group className="mt-4 p-0" controlId="formBasicEmail">
-              <Form.Control type="number" min={0-9} className='bg-light w-75' />
+              <Form.Control type="number" min={0-9} className=' w-75' />
             </Form.Group>
           </div>
 
@@ -83,15 +83,15 @@ function ArticleForm() {
         <div className=' form-section3 mt-3'>
           <Form.Group className="mb-3 py" controlId="formBasicEmail">
             <Form.Label> الكلمات المفتاحية</Form.Label>
-            <Form.Control type="text" className='p-md-2 bg-light'  />
+            <Form.Control type="text" className='p-md-2 '  />
           </Form.Group>
           <Form.Group className="mb-3 py" controlId="formBasicEmail">
             <Form.Label> أسلوب المحتوى</Form.Label>
-            <Form.Control type="text" className='p-md-2 bg-light'  />
+            <Form.Control type="text" className='p-md-2 '  />
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label htmlFor="disabledSelect">اختر اللغة</Form.Label>
-            <Form.Select id="disabledSelect" className=' text-center p-md-2 bg-light'>
+            <Form.Select id="disabledSelect" className=' text-center p-md-2 '>
               <option>لغه عربية</option>
               <option>لغة انجليزية</option>
             </Form.Select>

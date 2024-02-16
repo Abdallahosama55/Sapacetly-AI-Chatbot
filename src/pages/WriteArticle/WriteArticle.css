@@ -1,0 +1,38 @@
+.writearticel{
+    min-height: 85vh;
+} 
+.Border-blue-Bold  button{
+    border: 5px solid #280056 !important;
+
+}
+
+.bg-primecolor{
+    border:1px solid #280056 !important;
+    background-color: transparent;
+
+}
+.bg-primecolor:hover{
+    border:0px solid #001B79 !important;
+ 
+    color: #ffffff;
+    background-color:#001B79;
+}
+.bg-primecolor :disabled{
+
+    color: #ffffff !important;
+    background-color: #e310a4 !important;
+
+}
+
+.btn.disabled, .btn:disabled, fieldset:disabled .btn{
+    color:#001B79;
+    background-color:transparent !important;
+
+}
+.MuiStepIcon-root.MuiStepIcon-completed {
+    color: #001B79 !important;
+}
+.MuiStepIcon-root.MuiStepIcon-active{
+    color: #022191 !important;
+
+}

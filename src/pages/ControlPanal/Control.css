@@ -1,3 +1,65 @@
+.cards{
+   position: relative;
+     min-height: 300px;
+     border-radius: 50px !important;
+  }
+.icon-arrow{
+   position: absolute;
+   bottom: 0px;
+   z-index: 5;
+width: 100px;
+height: 100px;
+   left: -5%;
+}
+.icon-arrow-img{
+   position: absolute;
+   bottom: 30px;
+   width: 40px;
+   height: 40px;
+ border-radius: 50%;
+background-color: #001A78;
+   left: 30px;
+   z-index: 15;
+   
+}
+.visible {
+   visibility: visible;
+ }
+ 
+ .hidden {
+   visibility: hidden;
+ }
+ .haverimg{
+   height:100px ;
+   width: 25%;
+
+ } 
+.Control .welcome .bottom-arrow .arrow-welcome {
+   background-color: #001A78 !important;
+   border-radius: 10rem;
+left: 0%;
+position: absolute !important;
+width: 3rem !important;
+margin-top: 13px;
+z-index: 500;
+
+}
+
+.Control .welcome .bottom-arrow .img-curve {
+background-image: url('../../assets/Images/curve.png');
+background-size: cover;
+
+position: absolute;
+scale: 0.5;
+margin-left: 5px;
+right: 70%;
+top: 0% !important;
+
+z-index: 3;
+
+
+
+}
 .Control {
    background-color: #ffffff;
 }
@@ -70,6 +132,7 @@
 .Control .welcome {
    background-color: #fff;
    border-radius: 3.125rem;
+   
    box-shadow: 5px 5px 50px 0px rgba(0, 0, 0, 0.1);
 }
 .Control .welcome h2 {
@@ -116,24 +179,24 @@
 .Control .welcome .card-arrow {
 }
 .Control .welcome .img55 {
-   background-image: url("../../assets/Images/Vector 911.jpg");
+background-color:#FBE9D0;
    background-size:cover;
    background-repeat: no-repeat;
 }
 .Control .welcome .img12 {
-   background-image: url("../../assets/Images/Vector 912.svg");
+background-color: #CFDEFC;
   
    background-size:cover;
    background-repeat: no-repeat;
 }
 .Control .welcome .img24 {
-   background-image: url("../../assets/Images/Vector 913.jpg");
+background-color: #E4E3E8;
   
    background-size:cover;
    background-repeat: no-repeat;
 }
 .Control .welcome .img08 {
-   background-image: url("../../assets/Images/Vector 914.svg");
+background-color: #D1FFEA;
    background-size:cover;
    background-repeat: no-repeat;
   
@@ -226,10 +289,12 @@
       border-radius: 10rem;
       margin-right: 5.7rem;
       margin-top: 0.3rem;
-   position: absolute !important;
+   position: relative !important;
    width: 3.2rem !important;
+   z-index: 500;
    
    }
+
    /* Styles for tablets (portrait and landscape) */
  }
 
@@ -239,73 +304,72 @@
    .Control .welcome .bottom-arrow{
       position: relative;
    }
-
+.cards{
+ position: relative;
+ 
+}
 .Control .welcome .bottom-arrow .arrow-welcome {
    background-color: #001A78 !important;
    border-radius: 10rem;
-right:80%;
-top: 50%;
+left: 0%;
 position: absolute !important;
-width: 3.2rem !important;
-margin-top: 5px;
+width: 3rem !important;
+margin-top: 13px;
+z-index: 500;
 
 }
+.Control .welcome .bottom-arrow .img-curve {
+background-image: url('../../assets/Images/curve.png');
+background-size: cover;
+
+position: absolute;
+scale: 1.3;
+margin-left: 5px;
+right: 70%;
+top: 0% !important;
+
+z-index: 3;
+
+
+
+}
+
+
+
+
    .Control .welcome .img55 {
-      background-image: url("../../assets/Images/Vector 911.jpg");
-     
 
       background-color: #FBE9D0;
     max-width:600px !important;
       background-repeat: no-repeat;
-      border-radius: 15px !important;
+      border-radius: 30px !important;
     
    }
    .Control .welcome .img12 {
-      background-image: url("../../assets/Images/Vector 912.svg");
-     border-radius: 15px !important;
+      background-color: #CFDEFC;
+      border-radius: 30px !important;
       background-size:cover;
       background-repeat: no-repeat;
    }
    .Control .welcome .img24 {
-      background-image: url("../../assets/Images/Vector 913.jpg");
-      border-radius: 15px !important;
+      background-color: #E4E3E8;
+     
+      border-radius: 30px !important;
       background-size:cover;
       background-repeat: no-repeat;
    }
    .Control .welcome .img08 {
-      background-image: url("../../assets/Images/Vector 914.svg");
+      background-color: #D1FFEA;
       background-size:cover;
       background-repeat: no-repeat;
-      border-radius: 15px !important;
-    
+      border-radius: 30px !important;
    }
  
 }
 
 /* Media query for medium-sized screens */
 @media only screen and (max-width: 1199px) {
-   .Control .welcome .img55 {
-      background-image: url("../../assets/Images/Vector 911.jpg");
-      background-size:cover;
-      background-repeat: no-repeat;
-   }
-   .Control .welcome .img12 {
-      background-image: url("../../assets/Images/Vector 912.svg");
-     
-      background-size:cover;
-      background-repeat: no-repeat;
-   }
-   .Control .welcome .img24 {
-      background-image: url("../../assets/Images/Vector 913.jpg");
-     
-      background-size:cover;
-      background-repeat: no-repeat;
-   }
-   .Control .welcome .img08 {
-      background-image: url("../../assets/Images/Vector 914.svg");
-      background-size:cover;
-      background-repeat: no-repeat;
-   }
+
  
 }
 
@@ -368,34 +432,86 @@ margin-top: 5px;
    }
 }
 @media only screen and (max-width: 850px) {
+
+   .icon-arrow{
+      position: absolute;
+      bottom: 0px;
+      z-index: 5;
+   width: 80px;
+   height: 80px;
+      left: -5%;
+   }
+   .icon-arrow-img{
+      position: absolute;
+      bottom: 10px;
+      margin-top:50px ;
+      width: 40px;
+      height: 40px;
+    border-radius: 50%;
+   background-color: #001A78;
+      left: 20px !important;
+      z-index: 15;
+      
+   }
+   .cards{
+      position: relative;
+        min-height: 220px;
+        border-radius: 30px !important;
+     }
    .Control .welcome .img55 {
-      background-image: url("../../assets/Images/Vector 911.jpg");
+
       background-size: cover;
 
-      border-radius: 3.1rem;
+      background-color: #FBE9D0;
+  
       background-repeat: no-repeat;
    }
    .Control .welcome .img12 {
-      background-image: url("../../assets/Images/Vector 912.svg");
+      background-color: #CFDEFC;
       background-size: cover;
   
-      border-radius: 3.1rem;
+   
       background-repeat: no-repeat;
    }
    .Control .welcome .img24 {
-      background-image: url("../../assets/Images/Vector 913.jpg");
+      background-color: #E4E3E8;
+     
       background-size: cover;
   
-      border-radius: 3.1rem;
       background-repeat: no-repeat;
    }
    .Control .welcome .img08 {
-      background-image: url("../../assets/Images/Vector 914.svg");
+      background-color: #D1FFEA;
       background-size: cover;
-  
-      border-radius: 3.1rem;
+ 
       background-repeat: no-repeat;
    }
+   .Control .welcome .bottom-arrow .arrow-welcome {
+      background-color: #001A78 !important;
+      border-radius: 10rem;
+   left: 0%;
+   position: absolute !important;
+   width: 3rem !important;
+   margin-top: 13px;
+   z-index: 500;
+   
+   }
+
+   .Control .welcome .bottom-arrow .img-curve {
+background-image: url('../../assets/Images/curve.png');
+background-size: cover;
+
+position: absolute;
+scale: 0.5;
+margin-left: 5px;
+right: 70%;
+top: 0% !important;
+
+z-index: 3;
+
+
+
+}
    .Control .welcome .arrow-welcome {
       /* width: 22% !important; */
    }

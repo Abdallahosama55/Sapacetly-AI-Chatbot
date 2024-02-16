@@ -114,7 +114,7 @@ export default function StartChat({ content }) {
           
                   
           <form onSubmit={handleSubmit}>
-          <div className="input  text-center me-auto ms-auto">
+          <div className="input position-absolute w-75  bottom-0    row  align-content-center text-center me-auto ms-auto">
             <TextareaAutosize
               ref={textareaRef}
               value={input_NewChat}

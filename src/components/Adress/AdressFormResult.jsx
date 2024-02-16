@@ -34,7 +34,7 @@ function AdressFormResult() {
 
   // Render checkbox item
   const renderCheckboxItem = (label, index) => (
-    <div key={index} className='row bg-light align-items-center mb-2 justify-content-center border-form-text'>
+    <div key={index} className='row  align-items-center font-light justify-content-center border-form-text'>
       <div className='col-11 p-2'>
         <p>{label}</p>
       </div>

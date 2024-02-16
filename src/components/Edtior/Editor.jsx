@@ -4,18 +4,11 @@ import Edit from '../Edit/Edit'
 import './Editor.css'
 function Editor() {
   return (
-    <div className=' container  rounded-4 shadow  bg-white ' dir='rtl'>
-    <div className=' row'>
-    <div className='col-md-3'>
-    
-    
-    
-    
-    </div>
-
-
-    <div className='col-md-9 '>
-    <div className='boder-editor'>
+    <div className=' container  rounded-3  ' dir='rtl'>
+    <div className=' row m-3'>
+   
+    <div className='col-12 '>
+  
    
       
     <Edit/>
@@ -35,7 +28,7 @@ function Editor() {
     
     
     
-    </div>
+ 
   )
 }
 

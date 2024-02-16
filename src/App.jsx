@@ -34,10 +34,7 @@ function App() {
             path="/edit"
             element={<Edit />}
           />
-          <Route
-            path="/editor"
-            element={<Editor />}
-          />
+        
           <Route
             path="/signin"
             element={<SignIn />}
@@ -72,6 +69,15 @@ function App() {
           path="control"
           element={<Control/>}
         />
+
+        <Route
+        path="WriteArticle"
+        element={< WriteArticle/>}
+      />
+      <Route
+            path="/editor"
+            element={<Editor />}
+          />
         
         <Route
         index

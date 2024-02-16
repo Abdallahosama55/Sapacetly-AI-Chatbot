@@ -9,13 +9,14 @@ const checkboxLabels = [
   'تسويق وبرمجة',
   'تصميم',
   'تسويق وبرمجة',
+  
   'تصميم',
   'تسويق وبرمجة',
   'تسويق وبرمجة',
   'تسويق وبرمجة',
 ];
 
-const resultsPerPage = 10;
+const resultsPerPage = 9;
 
 function KeyWordResult() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -29,14 +30,16 @@ function KeyWordResult() {
   );
 
   const renderCheckboxGroup = (label, index) => (
-    <div key={index} className='row align-items-center mb-2 justify-content-center border-form-text'>
+   
+    <div key={index} className='row align-items-center justify-content-center border-form-text'>
+  
       <div className='col-1'>
         <Form.Group as={Col} controlId={`exampleCheckbox${index}`}>
           {renderCheckboxItem()}
         </Form.Group>
       </div>
       <div className='col-11'>
-        <h6>{label}</h6>
+        <span className='text-blue-light'>{label}</span>
       </div>
     </div>
   );
@@ -59,6 +62,7 @@ function KeyWordResult() {
         {/* Checkbox Form */}
         <Form className=' ' dir='rtl'>
           <div className='container'>
+          <div className=' bg-light text-blue row p-3'>الكلمات المقترحة</div>
             {renderCurrentPageResults()}
           </div>
         </Form>

@@ -127,14 +127,19 @@ export default function Edit() {
       {image && <img src={image} alt="Preview" />}
 
       <Container>
-        <Row style={{ marginTop: "20px" }}>
-          <Col md={5} className=" p-5">
-            <h6 style={{ color: "black" }}> تجربتي ...</h6>
+        <Row style={{ marginTop: "20px" }} className=" shadow">
+          <Col md={5} className=" " >
+          <div className="ps-4 pt-4">
+          
+          <h6  className=" font-bold text-blue"> العنوان </h6>
+          <p  className=" font-light text-blue"> 1.4 الف كلمة </p>
+          </div>
+          
           </Col>
           <Col md={3}></Col>
-          <Col md={4} className=" p-5">
-            <Dropdown>
-              <Dropdown.Toggle variant="pink" className=" pink-btn" id="dropdown-basic">
+          <Col md={4} >
+            <Dropdown  className="pt-3">
+              <Dropdown.Toggle variant="pink" className="  bg-white text-blue shadow " id="dropdown-basic">
                تصدير
               </Dropdown.Toggle>
 
@@ -156,9 +161,8 @@ export default function Edit() {
 
       <Container>
         <Row>
-          <Col id="myDiv"></Col>
-
-          <div className="col-md-12">
+        
+          <div className="col-md-12 shadow  py-5">
             <div>
               <div
                 id="html2canvas-container"
@@ -166,7 +170,8 @@ export default function Edit() {
                 style={{
                   border: "none",
                  fontFamily:"GE SS Two Medium",
-                  paddingBottom: "1000px",
+                 minHeight:"45vh",
+             
                   margin:"30px",
                  textAlign:"end"
                 }}

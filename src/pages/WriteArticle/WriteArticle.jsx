@@ -10,7 +10,9 @@ import SubTite from '../../components/SubTitle/SubTitle';
 import SubTitleResult from '../../components/SubTitle/SubTitleResult';
 import ArticleForm from '../../components/Article/ArticleForm';
 import ActiveStepper from '../../components/Active Stepper/ActiveStepper';
-
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+import './WriteArticle.css'
 // Array of step labels
 const steps = ['الكلمات المفتاحية', 'العنوان', 'الصورة', 'العناوين الفرعية', 'المقال'];
 
@@ -57,36 +59,39 @@ const WriteArticle = () => {
   };
 
   return (
-    <div className='container bg-white shadow rounded-5 mt-5 p-md-5' dir='rtl'>
-      <div className='row justify-content-center align-items-center'>
-        <div className='col-md-6 border-1 shadow-1 align-items-center border-form '>
+    <div className=' bg-white  writearticel shadow rounded-3 m-2 mt-3 ps-md-3 pe-md-3 me-md-5 ms-md-3 pt-md-3 pb-md-3' dir='rtl'>
+      <div className='row   gap-3 pe-3 ps-3 '>
+        <div className='col ms-0  shadow '>
           <ActiveStepper activeStep={activeStep} />
           <div>
             {renderComponent()}
             {activeStep !== steps.length && (
-              <React.Fragment>
-                <div className=' row justify-content-center align-items-center mt-2'>
-                  <Button
-                    color="inherit"
+          
+                <div className=' d-flex  pb-3 justify-content-end align-items-center ps-5  gap-3  '>
+                 
+                <Button onClick={handleNext} className=' bg-primecolor text-blue Border-blue-bold rounded-circle  mt-1 mt-md-0' type="btn">
+                {activeStep === steps.length - 1 ? <IoIosArrowForward/> :<IoIosArrowForward/> }
+              </Button>
+                <Button
+                    
                     disabled={activeStep === 0}
                     onClick={handleBack}
-                    className='btn-blue ms-1 mt-1'
+                    className=' bg-primecolor ms-1 text-blue Border-blue-bold rounded-circle'
                     type='btn'
                   >
-                    الخطوة السابقة
+                  
+                  <IoIosArrowBack/>
                   </Button>
-                  <Button onClick={handleNext} className='btn-pink mt-1' type="btn">
-                    {activeStep === steps.length - 1 ? 'انهاء' : 'الخطوة التالية'}
-                  </Button>
+                 
                 </div>
-              </React.Fragment>
+              
             )}
           </div>
         </div>
-        <div className='col-md-6 '>
-          {activeStep === 0 && <div className='border-form '> <KeyWordResult/> </div>}
-          {activeStep === 1 && <div className='border-form '> <AdressFormResult/> </div>}
-          {activeStep === 3 && <div className='border-form '> <SubTitleResult/></div>}
+        <div className='col   rounded-3  shadow    '>
+          {activeStep === 0 && <div className='  h-100' > <KeyWordResult/> </div>}
+          {activeStep === 1 && <div > <AdressFormResult/> </div>}
+          {activeStep === 3 && <div > <SubTitleResult/></div>}
         </div>
       </div>
     </div>
