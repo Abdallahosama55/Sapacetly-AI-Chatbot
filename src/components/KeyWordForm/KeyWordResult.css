@@ -1,8 +1,10 @@
-.small-text{
-    font-size:.65rem;
-    text-align: center !important;
+.btn-blue{
+    background-color:#001B79 !important;
+    width: 2rem !important;
+    color: white;
+
 }
-.line-text{
-right:50%;
-background-color: white;
+
+.header{
+    background-color: #F3F3F3 !important;
 }

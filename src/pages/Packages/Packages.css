@@ -1,0 +1,177 @@
+.all-packages {
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+  direction: rtl;
+}
+
+/* Define scrollbar styles */
+.all-packages::-webkit-scrollbar {
+  width: 5px; /* Adjust the width as needed */
+}
+
+.all-packages::-webkit-scrollbar-thumb {
+  background: #cccccc; /* Color of the scrollbar thumb */
+  /* Round the edges of the thumb */
+}
+
+.all-packages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Optionally, you can add hover effects */
+.all-packages::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.packages-container {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  width: 90% !important;
+  margin: 0 auto;
+}
+
+.packages-main-text {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.packages-main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 650px) {
+  /* Your styles here */
+  .packages-main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  /* Your styles here */
+  .packages-container {
+    width: 90% !important;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  /* Your styles here */
+  .currency-container {
+    font-size: 10px;
+  }
+}
+
+.currency-container {
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 1px solid #bfc6dd;
+}
+
+.currency-main-text {
+}
+
+.select-container {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+.selector {
+  outline: none;
+}
+
+.select-box {
+  border: 1px solid #d5d9e0;
+  padding: 6px 25px;
+  border-radius: 10px;
+}
+
+.package-item-withcolor {
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: #ed5ab3;
+}
+.package-item {
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: rgba(0, 26, 120, 0.4);
+}
+
+.first-section {
+  background-color: #001a78;
+}
+.sec-section {
+  background-color: #ed5ab3;
+}
+.first-section,
+.sec-section {
+  color: white;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 15px 20px;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.price-section {
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.buttonPrice2 {
+  background-color: #ed5ab3;
+  border: 1px solid #ed5ab3;
+  color: white;
+}
+.buttonPrice {
+  background-color: white;
+  border: 1px solid #001a78;
+  color: #001a78;
+}
+.buttonPrice,
+.buttonPrice2 {
+  width: 100%;
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.item-container {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 14px;
+}
+.english-font {
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.item-color1 {
+  font-weight: bold;
+  font-size: 30px;
+  font-family: sans-serif;
+}
+.item-color {
+  color: #ed5ab3;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: sans-serif;
+}

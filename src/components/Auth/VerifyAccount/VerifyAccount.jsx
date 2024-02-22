@@ -1,33 +1,130 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import "../../Auth/auth.css";
 import logo from "../../../assets/Images/logo.svg";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 const VerifyAccount = () => {
-  const [code, setCode] = useState(["", "", "", ""]);
+  const token = localStorage.getItem("token");
+  const [message, setMessage] = useState("");
 
-  const handleChange = (index, value) => {
-    // Update the code state with the new value at the specified index
-    const newCode = [...code];
-    newCode[index] = value;
-    setCode(newCode);
+  const [user, setUser] = useState({});
+  // const location = useLocation();
+  // const token = location.state?.token;
+  // const email = location.state?.email;
+  // const userData = location.state?.userData;
+  const id = user?.id;
+  const userEmail = user?.email;
 
-    // Move focus to the next input if there is a value
-    if (value !== "" && index < code.length - 1) {
-      document.getElementById(`input-${index + 1}`).focus();
+  console.log(id);
+  console.log(userEmail);
+
+  const initialValues = {
+    code: ["", "", "", ""],
+  };
+
+  const validationSchema = Yup.object().shape({
+    code: Yup.array()
+      .of(Yup.string().length(1, "Must be exactly 1 character"))
+      .required("Required"),
+  });
+
+  const handleSubmit = async (values) => {
+    // Handle form submission here OTP
+    console.log("Form submitted with values:", values);
+
+    const { code } = values;
+    const verifyCode = code.join("");
+    console.log("verifyCode", verifyCode);
+
+    try {
+      const response = await axios.post(
+        `http://srv475086.hstgr.cloud/api/user/confirm-email/`,
+        { user_id: id, otp: verifyCode },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      // // Assuming the response contains user datas
+      const userData = response.data;
+      console.log(userData);
+
+      // localStorage.setItem("token", token);
+      // // dispatch(loginUser(userData));
+      // // Navigate to the desired route
+      navigate("/ChatRoutes");
+    } catch (error) {
+      console.error("Error posting data:", error);
+      console.log("state.error", error?.response?.data?.detail);
+      setMessage(error?.response?.data?.detail);
     }
   };
 
-  const handleKeyDown = (index, event) => {
-    // Move focus to the previous input on backspace if the current input is empty
-    if (event.key === "Backspace" && index > 0 && code[index] === "") {
-      document.getElementById(`input-${index - 1}`).focus();
+  const resentCode = async () => {
+    console.log("clicked");
+    try {
+      //Resend OTP
+      const response = await axios.post(
+        `http://srv475086.hstgr.cloud/api/user/resend-otp/`,
+        { email: userEmail }
+      );
+      const resData = response.data;
+      console.log(resData.detail);
+    } catch (error) {
+      console.error("Error posting data:", error);
+      console.log("state.error", error?.response?.data?.detail);
+      setMessage(error?.response?.data?.detail);
     }
   };
+
+  const [timer, setTimer] = useState(59);
+  const [timerFinished, setTimerFinished] = useState(false);
+  useEffect(() => {
+    //Get user data
+    async function getUserData() {
+      const getUserData = await axios.get(
+        `http://srv475086.hstgr.cloud/api/userinfo/`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      const userData = getUserData.data;
+      setUser(userData);
+      console.log(userData);
+    }
+    getUserData();
+  }, []);
+
+  useEffect(() => {
+    const countdown = setInterval(() => {
+      setTimer((prevTimer) => {
+        if (prevTimer > 0) {
+          return prevTimer - 1;
+        } else {
+          setTimerFinished(true);
+          clearInterval(countdown);
+          return 0;
+        }
+      });
+    }, 1000);
+
+    return () => {
+      clearInterval(countdown);
+    };
+  }, []);
 
   return (
-    <section className="d-flex ar bg-white   " dir="rtl" >
+    <section
+      className="d-flex  justify-content-center align-items-center ar bg-white   "
+      dir="rtl">
       <div className=" py-5 d-flex flex-column justify-content-center  align-items-center  col-xl-4 col-lg-6 col-12 ">
         <LazyLoadImage
           alt={"hi"}
@@ -37,57 +134,82 @@ const VerifyAccount = () => {
           opacity="true"
           placeholderSrc={logo}
         />
-        <h2 className="mt-5 color_pink fw-bolder mt-1 primary">
+        <h2 className="mt-5 text-move fw-bolder mt-1 text-move">
           التحقق من الحساب
         </h2>
         <p
           style={{ fontSize: "15px", width: "75%" }}
-          className="color_pink fw-normal mt-1 text-center"
-        >
+          className="text-move fw-normal mt-1 text-center">
           لقد تم إرسال الكود إلى
-          <span className=" px-1 primary fw-normal">amradham@gmail.com</span>
+          <span className=" px-1 text-move fw-normal">userEmail</span>
           أدخل كود التحقق هنا
         </p>
 
-        <form className="d-flex flex-column justify-content-between w-100 px-5 h-75 ">
-          <div className=" d-flex flex-column justify-content-center text-center">
-            <label htmlFor="email" className=" mb-2 fs_auth fw-bold  primary">
-              ادخل الكود{" "}
-            </label>
-            <div className="d-flex gap-2 w-100 justify-content-center">
-              {code.map((value, index) => (
-                <input
-                  key={index}
-                  id={`input-${index}`}
-                  type="text"
-                  maxLength="1"
-                  value={value}
-                  onChange={(e) => handleChange(index, e.target.value)}
-                  onKeyDown={(e) => handleKeyDown(index, e)}
-                  className="input_style_auth"
-                  style={{ width: "15%" }}
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}>
+          {({ isSubmitting }) => (
+            <Form className="d-flex flex-column justify-content-between w-100 px-5 h-75 ">
+              <div className=" d-flex flex-column justify-content-center text-center">
+                <label
+                  htmlFor="code"
+                  className=" mb-2 fs_auth fw-bold  text-move">
+                  ادخل الكود{" "}
+                </label>
+                <div className="d-flex gap-2 w-100 justify-content-center">
+                  {initialValues.code.map((_, index) => (
+                    <Field
+                      key={index}
+                      id={`code-${index}`}
+                      name={`code[${index}]`}
+                      type="text"
+                      maxLength="1"
+                      className="input_style_auth"
+                      style={{ width: "15%" }}
+                    />
+                  ))}
+                </div>
+                <ErrorMessage
+                  name="code"
+                  component="div"
+                  className="text-danger"
                 />
-              ))}
-            </div>
-
-            <p className=" primary fw-normal mt-5 text-center ">
-              لم تستلم الكود؟
-              <u className="primary fw-normal pe-1 ">إعادة الإرسال </u>
-            </p>
-            <p className="color_pink fw-normal  text-center">
-              إعادة ارسال الكود في خلال 00.59
-            </p>
-          </div>
-          <Link
-            to={"/newpassword"}
-            style={{ background: "#ed5ab3", border: "1px" }}
-            className="button_auth fs_auth"
-          >
-            التحقق من الحساب{" "}
-          </Link>
-        </form>
+                <div className=" text-danger">{message}</div>
+                <p className=" text-move fw-normal mt-5 text-center ">
+                  لم تستلم الكود؟
+                  {timerFinished && (
+                    <button
+                      style={{
+                        backgroundColor: "white",
+                        border: "none",
+                        color: "#001b79",
+                      }}
+                      type="button"
+                      className="text-move fw-normal pe-1"
+                      // to="/verifyaccount"
+                      onClick={() => resentCode()}>
+                      إعادة الإرسال
+                    </button>
+                  )}
+                </p>
+                <p className="text-move fw-normal  text-center">
+                  إعادة ارسال الكود في خلال 00:
+                  {timer < 10 ? `0${timer}` : timer}
+                </p>
+              </div>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                style={{ background: "#ed5ab3", border: "1px" }}
+                className=" btn-move fs_auth">
+                {isSubmitting ? "جارٍ الإرسال..." : "التحقق من الحساب"}
+              </button>
+            </Form>
+          )}
+        </Formik>
       </div>
-      <div className=" col-xl-8 col-lg-6  bg_auth h_vh_RES "></div>
+   
     </section>
   );
 };

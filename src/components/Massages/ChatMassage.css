@@ -1,17 +1,41 @@
-.content-massage{
-  overflow-wrap:break-word  !important;
-  max-width:700px !important;
+.content-massage {
+  overflow-wrap: break-word !important;
+  max-width: 700px !important;
 }
 .chat-height {
   min-height: 520px !important;
   max-height: 520px !important;
+  padding-right: 120px !important;
+}
+
+@media (max-width: 767px) {
+  .chat-height {
+    padding-right: 20px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .chat-height {
+    padding-right: 10px !important;
+  }
+}
+
+@media (min-height: 900px) {
+  .chat-height {
+    min-height: 900px !important;
+    max-height: 900px !important;
+  }
+}
+@media (min-height: 1000px) {
+  .chat-height {
+    min-height: 1000px !important;
+    max-height: 1000px !important;
+  }
 }
 
 .example::-webkit-scrollbar {
   width: 5px;
   direction: rtl !important;
-
-
 }
 
 /* Track */
@@ -29,11 +53,8 @@
   background: #555;
 }
 @media only screen and (max-width: 767px) {
-
-.content-massage{
-  overflow-wrap:break-word  !important;
-  max-width:200px !important;
+  .content-massage {
+    overflow-wrap: break-word !important;
+    max-width: 200px !important;
+  }
 }
-
-}
-

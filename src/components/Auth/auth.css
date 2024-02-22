@@ -9,7 +9,7 @@
 }
 .h_vh_IN,
 .h_vh_UP {
-  height: 110vh !important;
+  height: 100vh !important;
 }
 
 .input_style_auth {
@@ -20,7 +20,7 @@
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
-  border-radius: 16px;
+  border-radius: 8px;
   border: 1px solid #cfcfcf;
   background: #fff;
 
@@ -52,10 +52,10 @@
   border: 1px solid var(#001b79) !important;
 }
 .button_auth {
-  border-radius: 15px;
+  border-radius: 8px;
   display: flex;
   width: auto;
-  height: 55px;
+  height: 48px;
   padding: 10px;
   justify-content: center;
   align-items: center;
@@ -67,21 +67,47 @@
   font-weight: 500;
   line-height: normal;
   letter-spacing: 0.105px;
-  background: var(--colorPink);
+  background:rgba(105, 43, 239, 1) !important;
   color: var(--white, #fff);
 }
+.btn-move{
+  border-radius: 8px;
+  display: flex;
+  width: auto;
+  height: 48px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.105px;
+  background:rgba(105, 43, 239, 1) !important;
+  color: var(--white, #fff);
+
+}
 .button_auth:nth-child(1) {
-  background: var(--white);
+  background: var(--white) !important;
   color: var(--primary);
   border: 1px solid var(--primary, #001b79);
 }
 .button_auth:nth-child(2) {
-  background: #000;
+  background:var(--primary);
   color: var(--white);
+  background:rgba(24, 119, 242, 1) !important;
+  color: white;
+  border-style: none;
+}
+.text-move{
+ color: rgba(105, 43, 239, 1) !important;
 }
 .button_auth:nth-child(3) {
-  background: var(--primary);
-  color: var(--white);
+  background:rgba(24, 119, 242, 1) !important;
+  color: white;
   border: 1px solid var(--primary, #001b79);
 }
 .h_vh_RES {

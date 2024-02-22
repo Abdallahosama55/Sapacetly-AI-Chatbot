@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./Sidebar.css";
 import { useNavigate } from "react-router-dom";
 
+import { FaSignOutAlt } from "react-icons/fa";
+
+import switcherIcon from "../assets/Images/sideBar/toggleSidebar.png";
+
 import openSideIcon from "../assets/Images/sideBar/bxs_down-arrow-alt.png";
 import logo from "../assets/Images/sideBar/logoSideBar.png";
+import minLogo from "../assets/Images/sideBar/logo only.png";
 
 import category from "../assets/Images/sideBar/Category.png";
 import activeCategory from "../assets/Images/sideBar/CategoryActive.png";
@@ -38,28 +43,73 @@ import activeAccount from "../assets/Images/sideBar/activeAccount.png";
 import logout from "../assets/Images/sideBar/exit.png";
 
 const sideSections = [
-  { title: "لوحة التحكم", icon: category, iconActive: activeCategory },
-  { title: "ابدا محادثة جديدة", icon: startChatIcon, iconActive: activChat },
+  {
+    title: "لوحة التحكم",
+    icon: category,
+    iconActive: activeCategory,
+    link: "/control",
+  },
+  {
+    title: "ابدا محادثة جديدة",
+    icon: startChatIcon,
+    iconActive: activChat,
+    link: "/ChatRoutes",
+  },
   {
     title: "اقسام المحتوي",
     icon: sectionContentIcon,
     iconActive: activeSections,
+    link: "#",
   },
-  { title: "كتابة مقال كامل", icon: typingIcon, iconActive: activeTyping },
-  { title: "المدقق اللغوي ", icon: langChecker, iconActive: activeLangChecker },
-  { title: "تصميم صورة", icon: makingphoto, iconActive: activeMakingPhoto },
-  { title: "اعادة الصياغة", icon: refresh, iconActive: activerefresh },
+  {
+    title: "كتابة مقال كامل",
+    icon: typingIcon,
+    iconActive: activeTyping,
+    link: "/WriteArticle",
+  },
+  {
+    title: "المدقق اللغوي ",
+    icon: langChecker,
+    iconActive: activeLangChecker,
+    link: "#",
+  },
+  {
+    title: "تصميم صورة",
+    icon: makingphoto,
+    iconActive: activeMakingPhoto,
+    link: "/createPhoto",
+  },
+  {
+    title: "اعادة الصياغة",
+    icon: refresh,
+    iconActive: activerefresh,
+    link: "#",
+  },
 ];
 const sideSectionsSecond = [
-  { title: "ادارة الاشتراك", icon: managing, iconActive: activemanaging },
-  { title: "حسابي", icon: person, iconActive: activeAccount },
+  {
+    title: "ادارة الاشتراك",
+    icon: managing,
+    iconActive: activemanaging,
+    link: "/packages",
+  },
+  { title: "حسابي", icon: person, iconActive: activeAccount, link: "#" },
 ];
 
-const Sidebar = ({ openSideBar, setOpenSideBar }) => {
-  const [selectedSection, setSelectedSection] = useState("");
+const Sidebar = ({
+  setSwitchSideBar,
+  openSideBar,
+  setOpenSideBar,
+  switchSideBar,
+  switchIcon,
+  selectedSection,
+  setSelectedSection,
+}) => {
   const [wordslength, setWordsCount] = useState(850);
   const [wordsUsed, setWordsUsed] = useState(300);
   const widthProgress = (wordsUsed / wordslength) * 100;
+
+  const [minSide, setMinSide] = useState(true);
 
   const navigate = useNavigate();
 
@@ -71,33 +121,83 @@ const Sidebar = ({ openSideBar, setOpenSideBar }) => {
     setSelectedSection(sectionTitle);
     navigate();
   }
+  const token = localStorage.getItem("token");
+  const handleLogout = () => {
+    // Perform any additional logout logic here if needed
+
+    // Remove the token from localStorage
+    localStorage.removeItem("token");
+
+    // Navigate to the login page or any other desired page
+    navigate("/signin");
+  };
 
   return (
     <div className=" sidbar   sidebar-scroll ">
+      {switchIcon && (
+        <div
+          style={{ padding: "padding: 30px 30px 0 0" }}
+          className="toggleIcon"
+          dir="rtl">
+          <button
+            onClick={() => setSwitchSideBar(!switchSideBar)}
+            style={{ padding: "0px", border: "none", outline: "none" }}>
+            <img
+              style={{ width: "30px", height: "30px" }}
+              src={switcherIcon}
+              alt="switcher"
+            />
+          </button>
+        </div>
+      )}
       <div
         dir="rtl"
         className="side-container">
-        <img
-          style={{ cursor: "pointer" }}
-          onClick={() => {
-            navigate("#");
-          }}
-          src={logo}
-          className=" hover-of-link w-100 h-100 side-logo"
-        />
+        {openSideBar ? (
+          <img
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              navigate("/");
+            }}
+            src={logo}
+            className=" hover-of-link w-100 h-100 side-logo"
+          />
+        ) : (
+          <img
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              navigate("/");
+            }}
+            src={minLogo}
+            className=" hover-of-link w-100 h-100 side-logo"
+          />
+        )}
 
         <div className=" main-content  justify-content-between  d-flex ">
-          <div className=" main-text">الرئيسية</div>
-          <img
+          {openSideBar && <div className=" main-text">الرئيسية</div>}
+
+          {/* <img
+            // onClick={() => console.log("click")}
             onClick={() => setOpenSideBar(!openSideBar)}
             src={openSideIcon}
             className=" openSideIcon"
-          />
+          /> */}
+          {/* <FaSignOutAlt
+            // src={openSideIcon}
+            style={
+              !openSideBar
+                ? { rotate: "180deg", transitionDuration: "500ms" }
+                : { transitionDuration: "500ms" }
+            }
+            onClick={() => setMinSide(!minSide)}
+            alt=" OpenIcon"
+            className=" position-absolute openSideBarIcon "
+          /> */}
         </div>
         <ul className="side-sections">
           {sideSections.map((section, index) => (
             <Link
-              to="#"
+              to={section.link}
               key={index}
               style={
                 selectedSection === section.title
@@ -119,13 +219,13 @@ const Sidebar = ({ openSideBar, setOpenSideBar }) => {
           ))}
         </ul>
         <div className=" main-content  d-flex justify-content-start">
-          <div className=" main-text">العضوية</div>
+          {openSideBar && <div className=" main-text">العضوية</div>}
         </div>
         <ul className="side-sections">
           {sideSectionsSecond.map((section, index) => (
             <Link
               key={index}
-              to="#"
+              to={section.link}
               style={
                 selectedSection === section.title
                   ? { backgroundColor: "#001a78", color: "white" }
@@ -150,41 +250,45 @@ const Sidebar = ({ openSideBar, setOpenSideBar }) => {
             </Link>
           ))}
         </ul>
-        <button className={` color-red    d-flex gap-3`}>
+        <button
+          onClick={handleLogout}
+          className={` color-red    d-flex gap-3`}>
           <img
             src={logout}
             className="side-icon"
           />
           <div> تسجيل الخروج</div>
         </button>
-        <div className=" w-100  position-relative usesection">
-          <img
-            src={userIcon}
-            className="userIcon"
-          />
-          <div className="user-numbers d-flex justify-content-between align-items-center">
-            <div>{wordsUsed}</div>
-            <div>{wordslength}</div>
-          </div>
-          <div className=" progress-bar">
-            <div
-              style={{ width: widthProgress }}
-              className=" user-progress"
+        {openSideBar && (
+          <div className=" w-100  position-relative usesection">
+            <img
+              src={userIcon}
+              className="userIcon"
             />
+            <div className="user-numbers d-flex justify-content-between align-items-center">
+              <div>{wordsUsed}</div>
+              <div>{wordslength}</div>
+            </div>
+            <div className=" progress-bar">
+              <div
+                style={{ width: widthProgress }}
+                className=" user-progress"
+              />
+            </div>
+            <div
+              style={{ marginTop: "10px", textAlign: "center" }}
+              className=" userData">
+              سجل الاستخدام
+            </div>
+            <div style={{ textAlign: "center", width: "100%" }}>
+              <button
+                onClick={() => upgradeUser()}
+                className=" user-button">
+                ترقية
+              </button>
+            </div>
           </div>
-          <div
-            style={{ marginTop: "10px", textAlign: "center" }}
-            className=" userData">
-            سجل الاستخدام
-          </div>
-          <div style={{ textAlign: "center", width: "100%" }}>
-            <button
-              onClick={() => upgradeUser()}
-              className=" user-button">
-              ترقية
-            </button>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );

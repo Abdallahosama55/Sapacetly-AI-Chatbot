@@ -1,0 +1,14 @@
+.common-header .chat-heading {
+    margin-top: 5rem;
+ }
+ .common-header .chat-heading h3 {
+    color: #001b79;
+    text-align: center;
+
+
+
+    line-height: 1.5rem; /* 109.091% */
+ }
+.header-name{
+   font-family: 'GE SS Two Light' !important;
+ }

@@ -1,5 +1,7 @@
 .nav-container {
-  padding-top: 24px;
+  padding: 24px;
+  width: 90%;
+  padding: 24px 0;
 }
 
 .nav-icon-container {

@@ -1,4 +1,5 @@
 import { Field, Form, Formik } from "formik";
+import * as Yup from "yup";
 
 import logoutIcon from "../assets/Images/navBar/logoutNav.png";
 import myaccout from "../assets/Images/navBar/myAccount.png";
@@ -8,6 +9,7 @@ import { PiGear } from "react-icons/pi";
 import { IoNotificationsOutline } from "react-icons/io5";
 
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 import avatar from "../assets/Images/navBar/Avatar.png";
@@ -23,18 +25,60 @@ const Navbar = () => {
   const widthProgress = (wordsUsed / wordsCount) * 100;
 
   //Logout Nav For Api
-  function handleLogoutNav() {}
+  const navigate = useNavigate();
+
+  const initialValues = {
+    search: "",
+  };
+
+  const validationSchema = Yup.object({
+    search: Yup.string(),
+  });
+
+  const onSubmit = (values, { setSubmitting }) => {
+    // Handle form submission if needed
+    // You can perform additional actions here
+    setSubmitting(false);
+  };
+  const searchFunction = (searchTerm) => {
+    // Perform search logic with the searchTerm
+    console.log(`Searching for: ${searchTerm}`);
+    // Replace the console.log with your actual search implementation
+  };
+
+  const handleLogout = () => {
+    // Perform any additional logout logic here if needed
+
+    // Remove the token from localStorage
+    localStorage.removeItem("token");
+
+    // Navigate to the login page or any other desired page
+    navigate("/signin");
+  };
+
   return (
     <div
       dir="rtl"
       className=" d-flex  nav-container .align-items-center gap-2 flex-row ">
       <div className=" nav-input-container flex-grow-1 ">
-        <Formik>
-          <Form className="h-100  w-100">
-            <Field
-              placeholder="بحث..."
-              className=" nav-input h-100 w-100"></Field>
-          </Form>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={onSubmit}>
+          {({ values, handleChange }) => (
+            <Form className="h-100  w-100">
+              <Field
+                placeholder="بحث..."
+                id="search"
+                name="search"
+                value={values.search}
+                onChange={(e) => {
+                  handleChange(e); // Update Formik state
+                  searchFunction(e.target.value); // Trigger search function
+                }}
+                className=" nav-input h-100 w-100"></Field>
+            </Form>
+          )}
         </Formik>
       </div>
       <div className=" nav-icon-container position-relative  .align-items-center gap-2 d-flex bg-white px-2   flex-row">
@@ -114,7 +158,7 @@ const Navbar = () => {
                 />
               </div>
               <button
-                onClick={() => handleLogoutNav()}
+                onClick={handleLogout}
                 style={{
                   border: "none",
                   backgroundColor: "white",

@@ -34,8 +34,8 @@ function AdressFormResult() {
 
   // Render checkbox item
   const renderCheckboxItem = (label, index) => (
-    <div key={index} className='row  align-items-center font-light justify-content-center border-form-text'>
-      <div className='col-11 p-2'>
+    <div key={index} className='row   align-items-center font-light justify-content-center border-form-text'>
+      <div className='col-11  p-2'>
         <p>{label}</p>
       </div>
     </div>
@@ -61,13 +61,14 @@ function AdressFormResult() {
       <div >
         {/* Checkbox Form */}
         <div className='border-1 shadow-1 justify-content-center align-items-center m-2  p-1' dir='rtl'>
-          <h5 className='fw-bold p-3'>العناوين المقترحة</h5>
+          <div className='fw-bold p-3'>العناوين المقترحة</div>
           {renderCheckboxGroup()}
           {totalPages > 1 && (
-            <Pagination className='justify-content-center'>
+            <Pagination className='justify-content-center '>
               {Array.from({ length: totalPages }, (_, index) => (
                 <Pagination.Item
                   key={index + 1}
+    
                   active={currentPage === index + 1}
                   onClick={() => handlePageChange(index + 1)}
                 >

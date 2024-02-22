@@ -1,33 +1,57 @@
-@font-face {
+/* @font-face {
   font-family: "GE SS Two Bold";
   src: local("GE SS Two Bold"), url(./fonts/GE_SS_Two_Bold.otf) format("otf");
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
+
 }
 @font-face {
   font-family: "GE SS Two Light";
   src: local("MyFont-Light"), url(./fonts/GE_SS_Two_Light-1.otf) format("otf");
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
 }
 @font-face {
   font-family: "GE SS Two Medium";
-  src: local("GE SS Two Medium"), url(./fonts/GE_SS_Two_Medium.otf) format("otf");
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
+  src: local("GE SS Two Medium"),
+    url(./fonts/GE_SS_Two_Medium.otf) format("otf");
+
+} */
+@font-face {
+  font-family: "GE SS Two";
+  src: url("./fonts/GESSTwoMedium-Medium.woff2") format("woff2"),
+    url("./fonts/GESSTwoMedium-Medium.woff") format("woff"),
+    url("./fonts/GESSTwoMedium-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-body{
-  font-family: "GE SS Two Medium" ;
-  font-size: 200 !important;
-  color:#001B79;
-
+@font-face {
+  font-family: "GE SS Two";
+  src: url("./fonts/GESSTwoBold-Bold.woff2") format("woff2"),
+    url("./fonts/GESSTwoBold-Bold.woff") format("woff"),
+    url("./fonts/GESSTwoBold-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
-.font-light{
-  font-family: "GE SS Two Light" !important;
-}
-.text-pink{
-  color: #EB59B1;
+@font-face {
+  font-family: "GE SS Two";
+  src: url("./fonts/GESSTwoLight-Light.woff2") format("woff2"),
+    url("./fonts/GESSTwoLight-Light.woff") format("woff"),
+    url("./fonts/GESSTwoLight-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
+body {
+  font-family: "GE SS Two";
+
+  color: #001b79;
+}
+
+.font-light {
+  font-family: "GE SS Two" !important;
+}
+.text-pink {
+  color: #eb59b1;
+}
