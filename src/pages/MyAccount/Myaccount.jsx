@@ -8,9 +8,6 @@ import * as Yup from "yup";
 function MyAccount() {
   const [uploadedImage, setUploadedImage] = useState(null);
   const token = localStorage.getItem("token");
-
-  // Handler for file input change
-  // Handler for file input change
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file && file.type.substr(0, 5) === "image") {
@@ -33,21 +30,16 @@ function MyAccount() {
       id: "email",
       name: "email",
     },
-    { label: "رقم الجوال", type: "tel", id: "mobile", name: "mobile" },
+    { label: "رقم الجوال", type: "tel", id: "phone_number", name: "phone_number" },
   ];
 
   const inputFieldspassword = [
-    {
-      label: "كلمة المرور الحالية ",
-      type: "password",
-      id: "currentPassword",
-      name: "currentPassword",
-    },
+
     {
       label: "كلمة المرور الجديدة",
       type: "password",
-      id: "newPassword",
-      name: "newPassword",
+      id: "password",
+      name: "password",
     },
     {
       label: "تأكيد كلمة المرور",
@@ -60,11 +52,9 @@ function MyAccount() {
     email: Yup.string()
       .email("البريد الإلكتروني غير صالح")
       .required("حقل إجباري"),
-
-    currentPassword: Yup.string().required("حقل إجباري"),
-    newPassword: Yup.string().required("حقل إجباري"),
+    password: Yup.string().required("حقل إجباري"),
     confirmPassword: Yup.string().oneOf(
-      [Yup.ref("newPassword"), null],
+      [Yup.ref("password"), null],
       "يجب أن تتطابق كلمة المرور الجديدة"
     ),
   });
@@ -73,25 +63,34 @@ function MyAccount() {
     username: "",
     name: "",
     email: "",
-    mobile: "",
-    currentPassword: "",
-    newPassword: "",
-    confirmPassword: "",
+    phone_number:"",
+    password: "",
+    profile_picture:""
+   
   };
 
   // Handle Submit user Data
   const handleSubmit = async (values) => {
+
+    console.log(values)
     // Handle form submission
 
     try {
       const response = await axios.put(
-        `https://srv475086.hstgr.cloud/userinfo/update/`,
-        values,
-        { headers: { Authorization: `Bearer ${token}` } }
+        `https://srv475086.hstgr.cloud/api//userinfo/update/`,
+        values,    {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data", // Ensure correct content type
+          },
+        }
+   
       );
 
       // Assuming the response contains user data
       const userData = response.data;
+     
+   
     } catch (error) {
       // Handle error
 
@@ -121,7 +120,7 @@ function MyAccount() {
         >
         <div className="row pe-0 gap-md-5  w-100  w-100  me-md-5     ">
        
-          <div className="col-md-10 col-xl-8 col-lg-8 col-xxl-8 p-5    ">
+          <div className="col-md-10 order-3 order-xl-1 order-xxl-1  col-xl-8 col-lg-8 col-xxl-8 p-5    ">
           <h3 className="text-move  fw-bold py-4 ">الملف الشخصي</h3>
             <Formik
               initialValues={initialValues}
@@ -161,7 +160,7 @@ function MyAccount() {
                           <Field
                             type="hidden"
                             onChange={handleImageChange}
-                            id="imageUpload"
+                            id="imageUploadd"
                             name="profile_picture"
                             value={uploadedImage || ""}
                           />
@@ -179,11 +178,7 @@ function MyAccount() {
                         }>
                         تحميل الصورة
                       </button>
-                      <Field
-                        type="hidden"
-                        name="profile_picture"
-                        value={uploadedImage || ""}
-                      />
+                  
                     </div>
                   </div>
                   <div className="personal-details shadow-sm me-md-5 mt-md-4 border-custom-container rounded p-3 py-3 row">
@@ -295,7 +290,7 @@ function MyAccount() {
             </div>
           </div>
           <div className=" col-xl"></div>
-          <div className="col-md-9   col-xl-2 col-lg-2 col-xxl-2 mb-5 border-custom-container pe-0 me-md-5  shadow-sm rounded   ">
+          <div className="col-md-9  order-1 order-xl-3 order-xxl-3  col-xl-2 col-lg-2 col-xxl-2 mb-5 border-custom-container pe-0 me-md-5  shadow-sm rounded  ">
             <div className=" d-flex justify-content-center ">
               <div className=" d-block w-100 m-3">
                 <div>
