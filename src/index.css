@@ -12,19 +12,24 @@
 }
 @font-face {
   font-family: "GE SS Two Medium";
-  src: local("GE SS Two Medium"), url(./fonts/GE_SS_Two_Medium.otf) format("otf");
+  src: local("GE SS Two Medium"),
+    url(./fonts/GE_SS_Two_Medium.otf) format("otf");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
 
-body{
-  font-family: "GE SS Two Medium" ;
-  font-size: 200 !important;
-  color:#001B79;
+body {
+  font-family: "GE SS Two Medium";
 
+  color: #001b79;
 }
 
-.font-light{
+.font-light {
   font-family: "GE SS Two Light" !important;
 }
-
+.text-pink {
+  color: #eb59b1;
+}
+::-webkit-scrollbar {
+  display: none;
+}

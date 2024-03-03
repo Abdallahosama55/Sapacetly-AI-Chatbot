@@ -1,0 +1,9 @@
+.font-small {
+  font-size: 11px !important;
+}
+
+.ele {
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 15px;
+}
