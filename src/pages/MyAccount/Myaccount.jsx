@@ -94,8 +94,6 @@ function MyAccount() {
       const userData = response.data;
     } catch (error) {
       // Handle error
-
-   
     }
   };
 
@@ -107,131 +105,87 @@ function MyAccount() {
 
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      console.log("deleted success",response )
+      console.log("deleted success", response);
     } catch (error) {
-    console.log(error ,"find error")
+      console.log(error, "find error");
     }
   };
   return (
     <Fragment>
-    <div dir="rtl">
- 
-      <div
-        className="  d-flex justify-content-center    "
-        >
-        <div className="row pe-0 gap-md-5  w-100  w-100  me-md-5     ">
-       
-          <div className="col-md-10 col-xl-8 col-lg-8 col-xxl-8 p-5    ">
-          <h3 className="text-move  fw-bold py-4 ">الملف الشخصي</h3>
-            <Formik
-              initialValues={initialValues}
-              onSubmit={handleSubmit}
-              validationSchema={validationSchema}>
-              {({ dirty }) => (
-                <Form>
-                  <div className=" personal-details shadow-sm me-md-5  border-custom-container rounded p-3 py-3 row">
-                    <h5 className="text-move  fw-semibold  p-1 pb-0">
-                      {" "}
-                      تغيير صورة الملف الشخصي{" "}
-                    </h5>
-                    <div className="col-md-12">
-                      <div className="row g-md-5 p-0">
-                        <div className=" col-md-9">
-                          <p className=" fw-light  text-move">
-                            قم بتحميل صورة جديدة لتغيير صورة ملفك الشخصي
-                          </p>
-                        </div>
-                        <div className="col-md-3">
-                          <div className=" d-flex  justify-content-center align-items-start mb-3">
-                            <img
-                              src={uploadedImage || accountimg}
-                              className="w-75 rounded-circle border-custom-container"
-                              alt="Profile"
-                             
-                            />
+      <div dir="rtl">
+        <div className="  d-flex justify-content-center    ">
+          <div className="row pe-0 gap-md-5  w-100  w-100  me-md-5     ">
+            <div className="col-md-10 col-xl-8 col-lg-8 col-xxl-8 p-5    ">
+              <h3 className="text-move  fw-bold py-4 ">الملف الشخصي</h3>
+              <Formik
+                initialValues={initialValues}
+                onSubmit={handleSubmit}
+                validationSchema={validationSchema}>
+                {({ dirty }) => (
+                  <Form>
+                    <div className=" personal-details shadow-sm me-md-5  border-custom-container rounded p-3 py-3 row">
+                      <h5 className="text-move  fw-semibold  p-1 pb-0">
+                        {" "}
+                        تغيير صورة الملف الشخصي{" "}
+                      </h5>
+                      <div className="col-md-12">
+                        <div className="row g-md-5 p-0">
+                          <div className=" col-md-9">
+                            <p className=" fw-light  text-move">
+                              قم بتحميل صورة جديدة لتغيير صورة ملفك الشخصي
+                            </p>
                           </div>
-                          <input
-                            type="file"
-                            id="imageUpload"
-                            name="profile_picture"
-                            hidden
-                            onChange={handleImageChange}
-                          />
-
-                          <Field
-                            type="hidden"
-                            onChange={handleImageChange}
-                            id="imageUpload"
-                            name="profile_picture"
-                            value={uploadedImage || ""}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="col-md-12 mt-3 mt-md-0"
-                      dir="ltr">
-                      <button
-                        type="submit" // Change this to type="button" to prevent form submission
-                        className="fw-light btn btn-primary ps-3 pe-3 btn-move1"
-                        onClick={() =>
-                          document.getElementById("imageUpload").click()
-                        }>
-                        تحميل الصورة
-                      </button>
-                      <Field
-                        type="hidden"
-                        name="profile_picture"
-                        value={uploadedImage || ""}
-                      />
-                    </div>
-                  </div>
-                  <div className="personal-details shadow-sm me-md-5 mt-md-4 border-custom-container rounded p-3 py-3 row">
-                    <h5 className="text-move  fw-medium  p-1 pb-3">
-                      المعلومات الشخصية
-                    </h5>
-                    <div className="col-md-8">
-                      <div className="row m-0 p-0">
-                        {inputFields.map(({ label, type, id, name }) => (
-                          <div
-                            className="col-md-6 mt-2 "
-                            key={id}>
-                            <div className="">
-                              <label
-                                htmlFor={id}
-                                className="form-label text-move ">
-                                {label}
-                              </label>
-                              <Field
-                                type={type}
-                                className="form-control border-custom"
-                                id={id}
-                                name={name}
+                          <div className="col-md-3">
+                            <div className=" d-flex  justify-content-center align-items-start mb-3">
+                              <img
+                                src={uploadedImage || accountimg}
+                                className="w-75 rounded-circle border-custom-container"
+                                alt="Profile"
                               />
                             </div>
+                            <input
+                              type="file"
+                              id="imageUpload"
+                              name="profile_picture"
+                              hidden
+                              onChange={handleImageChange}
+                            />
+
+                            <Field
+                              type="hidden"
+                              onChange={handleImageChange}
+                              id="imageUpload"
+                              name="profile_picture"
+                              value={uploadedImage || ""}
+                            />
                           </div>
-                        ))}
+                        </div>
+                      </div>
+                      <div
+                        className="col-md-12 mt-3 mt-md-0"
+                        dir="ltr">
+                        <button
+                          type="submit" // Change this to type="button" to prevent form submission
+                          className="fw-light btn btn-primary ps-3 pe-3 btn-move1"
+                          onClick={() =>
+                            document.getElementById("imageUpload").click()
+                          }>
+                          تحميل الصورة
+                        </button>
+                        <Field
+                          type="hidden"
+                          name="profile_picture"
+                          value={uploadedImage || ""}
+                        />
                       </div>
                     </div>
-                    <div
-                      className="col-md-12  mt-3 mt-md-0"
-                      dir="ltr">
-                      <button
-                        type="submit"
-                        className=" fw-light btn btn-primary ps-5 pe-5 btn-move1">
-                        حفظ
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="personal-details mb-5 shadow-sm me-md-5 mt-md-4 border-custom-container rounded p-3 py-3 row">
-                    <h5 className="text-move  fw-semibold  p-1 pb-3">
-                      كلمة المرور{" "}
-                    </h5>
-                    <div className="col-md-8">
-                      <div className="row g-md-4">
-                        {inputFieldspassword.map(
-                          ({ label, type, id, name }) => (
+                    <div className="personal-details shadow-sm me-md-5 mt-md-4 border-custom-container rounded p-3 py-3 row">
+                      <h5 className="text-move  fw-medium  p-1 pb-3">
+                        المعلومات الشخصية
+                      </h5>
+                      <div className="col-md-8">
+                        <div className="row m-0 p-0">
+                          {inputFields.map(({ label, type, id, name }) => (
                             <div
                               className="col-md-6 mt-2 "
                               key={id}>
@@ -247,79 +201,118 @@ function MyAccount() {
                                   id={id}
                                   name={name}
                                 />
-                                <ErrorMessage
-                                  name={name}
-                                  component="div"
-                                  className="text-red"
-                                />
                               </div>
                             </div>
-                          )
-                        )}
+                          ))}
+                        </div>
+                      </div>
+                      <div
+                        className="col-md-12  mt-3 mt-md-0"
+                        dir="ltr">
+                        <button
+                          type="submit"
+                          className=" fw-light btn btn-primary ps-5 pe-5 btn-move1">
+                          حفظ
+                        </button>
                       </div>
                     </div>
-                    <div
-                      className="col-md-12 mt-3 mt-md-0"
-                      dir="ltr">
-                      <button
-                        type="submit"
-                        className=" fw-light btn btn-primary ps-5 pe-5 btn-move1">
-                        حفظ
-                      </button>
-                      <Field
-                        type="hidden"
-                        name="profile_picture"
-                        value={uploadedImage || ""}
-                      />
+
+                    <div className="personal-details mb-5 shadow-sm me-md-5 mt-md-4 border-custom-container rounded p-3 py-3 row">
+                      <h5 className="text-move  fw-semibold  p-1 pb-3">
+                        كلمة المرور{" "}
+                      </h5>
+                      <div className="col-md-8">
+                        <div className="row g-md-4">
+                          {inputFieldspassword.map(
+                            ({ label, type, id, name }) => (
+                              <div
+                                className="col-md-6 mt-2 "
+                                key={id}>
+                                <div className="">
+                                  <label
+                                    htmlFor={id}
+                                    className="form-label text-move ">
+                                    {label}
+                                  </label>
+                                  <Field
+                                    type={type}
+                                    className="form-control border-custom"
+                                    id={id}
+                                    name={name}
+                                  />
+                                  <ErrorMessage
+                                    name={name}
+                                    component="div"
+                                    className="text-red"
+                                  />
+                                </div>
+                              </div>
+                            )
+                          )}
+                        </div>
+                      </div>
+                      <div
+                        className="col-md-12 mt-3 mt-md-0"
+                        dir="ltr">
+                        <button
+                          type="submit"
+                          className=" fw-light btn btn-primary ps-5 pe-5 btn-move1">
+                          حفظ
+                        </button>
+                        <Field
+                          type="hidden"
+                          name="profile_picture"
+                          value={uploadedImage || ""}
+                        />
+                      </div>
                     </div>
-                  </div>
-                </Form>
-              )}
-            </Formik>
-            <div className=" personal-details mb-5 shadow-sm me-md-5 mt-md-4 border-custom-red rounded-5 p-3 py-3 row">
-              <h5 className="    text-red  p-1 pb-1"> مسح جميع الدردشات </h5>
-              <p className=" text-red fw-light ">
-                سيؤدي هذا إلى حذف محفوظات الدردشة بشكل دائم.
-              </p>
-              <div className="col-md-8"></div>
-              <div
-                className="col-md-12 mt-3 mt-md-0"
-                dir="ltr">
-                <button
-                  type="btn"
-                  onClick={() => deleteConversations()}
-                  className=" fw-light btn btn-red ps-5 pe-5  text-white ">
-                  مسح
-                </button>
+                  </Form>
+                )}
+              </Formik>
+              <div className=" personal-details mb-5 shadow-sm me-md-5 mt-md-4 border-custom-red rounded-5 p-3 py-3 row">
+                <h5 className="    text-red  p-1 pb-1"> مسح جميع الدردشات </h5>
+                <p className=" text-red fw-light ">
+                  سيؤدي هذا إلى حذف محفوظات الدردشة بشكل دائم.
+                </p>
+                <div className="col-md-8"></div>
+                <div
+                  className="col-md-12 mt-3 mt-md-0"
+                  dir="ltr">
+                  <button
+                    type="btn"
+                    onClick={() => deleteConversations()}
+                    className=" fw-light btn btn-red ps-5 pe-5  text-white ">
+                    مسح
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div className=" col-xl"></div>
-          <div className="col-md-9   col-xl-2 col-lg-2 col-xxl-2 mb-5 border-custom-container pe-0 me-md-5  shadow-sm rounded   ">
-            <div className=" d-flex justify-content-center ">
-              <div className=" d-block w-100 m-3">
-                <div>
-                  <button className="w-100 rounded mt-2 mb-3  button-white   fw-light   text-move shadow-sm    mt-2">
-                    الرجوع
-                    <IoIosArrowBack />
-                  </button>
-                </div>
-                <div>
-                  <button className=" w-100 rounded     fw-light p-1  text-white btn-move1 ">
-                    إعدادات الحساب
-                  </button>
-                </div>
+            <div className=" col-xl"></div>
+            <div className="col-md-9   col-xl-2 col-lg-2 col-xxl-2 mb-5 border-custom-container pe-0 me-md-5  shadow-sm rounded   ">
+              <div className=" d-flex justify-content-center ">
+                <div className=" d-block w-100 m-3">
+                  <div>
+                    <button className="w-100 rounded mt-2 mb-3  button-white   fw-light   text-move shadow-sm    mt-2">
+                      الرجوع
+                      <IoIosArrowBack />
+                    </button>
+                  </div>
+                  <div>
+                    <button className=" w-100 rounded     fw-light p-1  text-white btn-move1 ">
+                      إعدادات الحساب
+                    </button>
+                  </div>
 
-                <div>
-                  <button className=" w-100 rounded mt-2   fw-light p-1  text-white btn-move1 ">
-                    خطتي
-                  </button>
+                  <div>
+                    <button className=" w-100 rounded mt-2   fw-light p-1  text-white btn-move1 ">
+                      خطتي
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </Fragment>
   );
